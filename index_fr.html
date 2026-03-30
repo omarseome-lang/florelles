@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Renaissance — Guides pour le Bien-être Féminin</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
 <style>
 :root{--cr:#B87066;--cr2:#D4998F;--sand:#F2E8DC;--dark:#1E1614;--mid:#3D2820;--muted:#8C7068;--off:#FAF6F1;--green:#6B9E82;--gold:#C9A96E;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -21,10 +24,10 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:
 .lang-btn{font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid rgba(184,112,102,0.4);background:transparent;color:var(--muted);cursor:pointer;text-decoration:none;transition:all .2s;}
 .lang-btn.active{background:var(--cr);color:white;border-color:var(--cr);}
 #hero{min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 70% 50%,rgba(184,112,102,0.12) 0%,transparent 60%),#1E1614;}
-.hero-content{position:relative;max-width:640px;animation:fadeUp .9s ease both;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 70% 50%,rgba(184,112,102,0.12) 0%,transparent 60%),#1E1614;z-index:0;}
+.hero-content{position:relative;max-width:640px;z-index:1;}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(184,112,102,0.12);border:1px solid rgba(184,112,102,0.3);border-radius:40px;padding:8px 18px;margin-bottom:40px;font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--cr2);}
-.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--cr);display:inline-block;animation:pulse 2s infinite;}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--cr);display:inline-block;}
 h1{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,76px);font-weight:400;line-height:1.08;margin-bottom:28px;}
 h1 em{font-style:italic;color:var(--cr2);}
 .hero-sub{font-size:18px;font-weight:300;color:rgba(250,246,241,0.7);line-height:1.7;max-width:520px;margin-bottom:48px;}
@@ -107,7 +110,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .footer-note{font-size:11px;color:rgba(140,112,104,0.5);}
 .modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(20,15,13,0.85);backdrop-filter:blur(8px);align-items:center;justify-content:center;}
 .modal-overlay.open{display:flex;}
-.modal{background:var(--mid);border:1px solid rgba(184,112,102,0.2);border-radius:24px;padding:48px;max-width:480px;width:90%;position:relative;animation:fadeUp .4s ease both;}
+.modal{background:var(--mid);border:1px solid rgba(184,112,102,0.2);border-radius:24px;padding:48px;max-width:480px;width:90%;position:relative;}
 .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;}
 .modal h3{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:var(--off);margin-bottom:8px;}
 .modal-price{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold);margin:16px 0;}
@@ -116,14 +119,14 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .pay-stripe{background:#635BFF;color:white;}
 .pay-paypal{background:#FFD140;color:#003087;}
 .modal-note{font-size:11px;color:var(--muted);text-align:center;margin-top:16px;}
-.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+.reveal{opacity:1;transform:none;}
 .reveal.visible{opacity:1;transform:none;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:1;transform:none;}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
 @media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.mini-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
-<body>
+<body style="background:#1E1614;color:#FAF6F1;">
 <nav>
   <a href="index_fr.html" class="nav-logo">Renaissance</a>
   <div class="nav-links">
