@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -274,13 +274,13 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <h3 id="modal-title"></h3>
     <div class="modal-price"><sup style="font-size:18px">€</sup><span id="modal-price"></span></div>
     <p class="modal-desc" id="modal-desc"></p>
-    <button class="pay-btn pay-stripe" onclick="alert('Connectez votre lien Stripe ici')">💳 Payer par Carte (Stripe)</button>
-    <button class="pay-btn pay-paypal" onclick="alert('Connectez votre lien PayPal ici')">🅿 Payer avec PayPal</button>
+    <button class="pay-btn pay-stripe" onclick="handlePayment('stripe')">💳 Payer par Carte (Stripe)</button>
+    <button class="pay-btn pay-paypal" onclick="handlePayment('paypal')">🅿 Payer avec PayPal</button>
     <p class="modal-note">🔒 Paiement chiffré · Téléchargement immédiat · Aucune donnée médicale requise</p>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">
+<script>
 const stripeLinks = {
   'Rinascita del Piacere': 'https://buy.stripe.com/fZu28racL6i33U0fyH2go02',
   'Renaissance du Plaisir': 'https://buy.stripe.com/7sY6oH98H49Vbms4U32go01',
@@ -295,7 +295,7 @@ function handlePayment(method){
   const title=document.getElementById('modal-title').textContent;
   const url=stripeLinks[title];
   if(method==='stripe'){
-    if(url){window.location.href=url;}
+    if(url){window.open(url,'_blank');}
     else{alert('Lien de paiement non disponible. Contactez contact@florelles.com');}
   } else {
     alert('PayPal bientôt disponible. Utilisez le paiement par carte.');
@@ -305,7 +305,7 @@ function handlePayment(method){
 const reveals=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('visible'),i*80);});},{threshold:0.1});
 reveals.forEach
-  </script>
-
+  (r=>obs.observe(r));
+</script>
 </body>
 </html>
