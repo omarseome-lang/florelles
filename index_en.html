@@ -1,4 +1,3 @@
-Output
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,7 +197,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <h2 class="reveal">Go deeper into<br><em>every exercise</em></h2>
   <p class="section-intro reveal">Short, focused modules on a single technique. Perfect for going further on a specific aspect of the journey.</p>
   <div class="mini-grid">
-    <div class="mini-card reveal"><div class="mini-icon">🌬️</div><div class="mini-body"><h4>Breathing & Pelvic Floor</h4><p>In-depth guide to diaphragmatic breathing techniques and coordination with pelvic relaxation.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3.90</span></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div><div class="mini-body"><h4>Breathing & Pelvic Floor</h4><p>In-depth guide to diaphragmatic breathing techniques and coordination with pelvic relaxation.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3.90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🤲</div><div class="mini-body"><h4>Therapeutic Touch & Mapping</h4><p>Self-exploration techniques, scar tissue approaches and detailed tissue care protocols.</p><div class="mini-meta"><span class="mini-tag">Phase 2</span><span class="mini-price">€3.90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">⚡</div><div class="mini-body"><h4>Pain Desensitisation</h4><p>Detailed protocol for the therapeutic window, thermal contrast and somatic reprocessing techniques.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🌊</div><div class="mini-body"><h4>Modified Kegel & Active Release</h4><p>Complete pelvic floor exercise programme with focus on active release of chronic muscular hypertonia.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span></div></div></div>
@@ -261,6 +260,27 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   </div>
 </div>
 <script>
+const miniLinks = {
+  'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Desensibilizzazione al Dolore': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modificati & Rilascio Attivo': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Riconnessione al Piacere': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Comunicazione con il Partner': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Bundle Mini-Guide Completo': 'https://buy.stripe.com/fZu00j4Sr5dZ76c5Y72go0b',
+  'Respiration & Plancher Pelvien': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Toucher Thérapeutique & Cartographie': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Désensibilisation à la Douleur': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modifiés & Relâchement Actif': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnexion au Plaisir': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Communication avec le Partenaire': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Breathing & Pelvic Floor': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Therapeutic Touch & Mapping': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Pain Desensitisation': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Modified Kegel & Active Release': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnecting with Pleasure': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Partner Communication': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+};
 const stripeLinks = {
   'Rinascita del Piacere': 'https://buy.stripe.com/fZu28racL6i33U0fyH2go02',
   'Renaissance du Plaisir': 'https://buy.stripe.com/7sY6oH98H49Vbms4U32go01',
@@ -271,6 +291,12 @@ const stripeLinks = {
 };
 function openModal(t,d,p,f){document.getElementById('modal-title').textContent=t;document.getElementById('modal-desc').textContent=d;document.getElementById('modal-price').textContent=p;document.getElementById('modal').classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+function openMini(title) {
+  const url = miniLinks[title];
+  if (url) { window.open(url, '_blank'); }
+  else { alert('Link non disponibile. Contatta contact@florelles.com'); }
+}
 function handlePayment(method){
   const title=document.getElementById('modal-title').textContent;
   const url=stripeLinks[title];
