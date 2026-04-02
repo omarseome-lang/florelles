@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -214,7 +214,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <h2 class="reveal">Approfondissez chaque<br><em>exercice</em></h2>
   <p class="section-intro reveal">Modules courts et ciblés sur une seule technique. Parfaits pour aller plus loin sur un aspect spécifique du parcours.</p>
   <div class="mini-grid">
-    <div class="mini-card reveal"><div class="mini-icon">🌬️</div><div class="mini-body"><h4>Respiration & Plancher Pelvien</h4><p>Guide approfondie sur les techniques de respiration diaphragmatique et la coordination avec la relaxation pelvienne.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3,90</span></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div><div class="mini-body"><h4>Respiration & Plancher Pelvien</h4><p>Guide approfondie sur les techniques de respiration diaphragmatique et la coordination avec la relaxation pelvienne.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3,90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🤲</div><div class="mini-body"><h4>Toucher Thérapeutique & Cartographie</h4><p>Techniques d'auto-exploration, approches du tissu cicatriciel et protocoles détaillés de soin des tissus.</p><div class="mini-meta"><span class="mini-tag">Phase 2</span><span class="mini-price">€3,90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">⚡</div><div class="mini-body"><h4>Désensibilisation à la Douleur</h4><p>Protocole détaillé pour la fenêtre thérapeutique, contraste thermique et techniques de retraitement somatique.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3,90</span></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🌊</div><div class="mini-body"><h4>Kegel Modifiés & Relâchement Actif</h4><p>Programme complet d'exercices pour le plancher pelvien avec focus sur le relâchement actif de l'hypertonicité.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3,90</span></div></div></div>
@@ -281,6 +281,27 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 </div>
 
 <script>
+const miniLinks = {
+  'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Desensibilizzazione al Dolore': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modificati & Rilascio Attivo': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Riconnessione al Piacere': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Comunicazione con il Partner': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Bundle Mini-Guide Completo': 'https://buy.stripe.com/fZu00j4Sr5dZ76c5Y72go0b',
+  'Respiration & Plancher Pelvien': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Toucher Thérapeutique & Cartographie': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Désensibilisation à la Douleur': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modifiés & Relâchement Actif': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnexion au Plaisir': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Communication avec le Partenaire': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Breathing & Pelvic Floor': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Therapeutic Touch & Mapping': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Pain Desensitisation': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Modified Kegel & Active Release': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnecting with Pleasure': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Partner Communication': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+};
 const stripeLinks = {
   'Rinascita del Piacere': 'https://buy.stripe.com/fZu28racL6i33U0fyH2go02',
   'Renaissance du Plaisir': 'https://buy.stripe.com/7sY6oH98H49Vbms4U32go01',
@@ -291,6 +312,12 @@ const stripeLinks = {
 };
 function openModal(t,d,p,f){document.getElementById('modal-title').textContent=t;document.getElementById('modal-desc').textContent=d;document.getElementById('modal-price').textContent=p;document.getElementById('modal').classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+function openMini(title) {
+  const url = miniLinks[title];
+  if (url) { window.open(url, '_blank'); }
+  else { alert('Link non disponibile. Contatta contact@florelles.com'); }
+}
 function handlePayment(method){
   const title=document.getElementById('modal-title').textContent;
   const url=stripeLinks[title];
@@ -305,7 +332,3 @@ function handlePayment(method){
 const reveals=document.querySelectorAll('.reveal');
 const obs=new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('visible'),i*80);});},{threshold:0.1});
 reveals.forEach
-  (r=>obs.observe(r));
-</script>
-</body>
-</html>
