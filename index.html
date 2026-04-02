@@ -592,7 +592,7 @@ footer {
 
   <div class="mini-grid">
     <div class="mini-card reveal">
-      <div class="mini-icon">🌬️</div>
+      <div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div>
       <div class="mini-body">
         <h4>Respiro & Pavimento Pelvico</h4>
         <p>Guida approfondita alle tecniche di respirazione diaframmatica, respiro 4-4-6, e coordinazione con il rilassamento pelvico.</p>
@@ -600,6 +600,7 @@ footer {
           <span class="mini-tag">Fase 1</span>
           <span class="mini-price">€3,90</span>
         </div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05','_blank')">Acquista →</button>
       </div>
     </div>
     <div class="mini-card reveal">
@@ -611,6 +612,7 @@ footer {
           <span class="mini-tag">Fase 2</span>
           <span class="mini-price">€3,90</span>
         </div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06','_blank')">Acquista →</button>
       </div>
     </div>
     <div class="mini-card reveal">
@@ -622,6 +624,8 @@ footer {
           <span class="mini-tag">Fase 3</span>
           <span class="mini-price">€3,90</span>
         </div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08','_blank')">Acquista →</button>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07','_blank')">Acquista →</button>
       </div>
     </div>
     <div class="mini-card reveal">
@@ -644,6 +648,7 @@ footer {
           <span class="mini-tag">Fase 4</span>
           <span class="mini-price">€3,90</span>
         </div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09','_blank')">Acquista →</button>
       </div>
     </div>
     <div class="mini-card reveal">
@@ -655,12 +660,13 @@ footer {
           <span class="mini-tag">Avanzato</span>
           <span class="mini-price">€3,90</span>
         </div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a','_blank')">Acquista →</button>
       </div>
     </div>
   </div>
 
   <div style="text-align:center; margin-top:36px;" class="reveal">
-    <button class="btn-primary" onclick="openModal('Bundle Mini-Guide Completo','Tutti e 6 i moduli di approfondimento — accesso immediato','14,90','')">Bundle Mini-Guide · €14,90</button>
+    <button class="btn-primary" onclick="window.open('https://buy.stripe.com/fZu00j4Sr5dZ76c5Y72go0b','_blank')">Bundle Mini-Guide · €14,90</button>
   </div>
 </section>
 
@@ -822,12 +828,39 @@ function closeModalOutside(e) {
 }
 
 // Payment handlers — Stripe links reali
+const miniLinks = {
+  'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Desensibilizzazione al Dolore': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modificati & Rilascio Attivo': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Riconnessione al Piacere': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Comunicazione con il Partner': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Bundle Mini-Guide Completo': 'https://buy.stripe.com/fZu00j4Sr5dZ76c5Y72go0b',
+  'Respiration & Plancher Pelvien': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Toucher Thérapeutique & Cartographie': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Désensibilisation à la Douleur': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modifiés & Relâchement Actif': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnexion au Plaisir': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Communication avec le Partenaire': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Breathing & Pelvic Floor': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Therapeutic Touch & Mapping': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Pain Desensitisation': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Modified Kegel & Active Release': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnecting with Pleasure': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Partner Communication': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+};
 const stripeLinks = {
   'Rinascita del Piacere': 'https://buy.stripe.com/fZu28racL6i33U0fyH2go02',
   'Renaissance du Plaisir': 'https://buy.stripe.com/7sY6oH98H49Vbms4U32go01',
   'Renaissance of Pleasure': 'https://buy.stripe.com/6oU28ret19uf2PWcmv2go03',
   'Bundle 3 Lingue': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04'
 };
+
+function openMini(title) {
+  const url = miniLinks[title];
+  if (url) { window.open(url, '_blank'); }
+  else { alert('Link non disponibile. Contatta contact@florelles.com'); }
+}
 function handlePayment(method) {
   const title = document.getElementById('modal-title').textContent;
   const stripeUrl = stripeLinks[title];
@@ -841,7 +874,3 @@ function handlePayment(method) {
     alert('PayPal sarà disponibile a breve. Usa il pagamento con carta.');
   }
 }
-  </script>
-
-</body>
-</html>
