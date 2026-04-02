@@ -67,13 +67,13 @@ h2 em{font-style:italic;color:var(--cr2);}
 .price-tag{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);}
 .btn-buy{background:var(--cr);color:white;border:none;padding:10px 22px;border-radius:40px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;}
 #mini{background:linear-gradient(160deg,#231818 0%,#1A1210 100%);}
-.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
-.mini-card{background:rgba(250,246,241,0.03);border:1px solid rgba(250,246,241,0.08);border-radius:16px;padding:20px;display:flex;gap:14px;transition:all .3s;}
+.mini-grid{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:16px;margin-top:48px;}
+.mini-card{background:rgba(250,246,241,0.03);border:1px solid rgba(250,246,241,0.08);border-radius:16px;padding:20px;display:flex!important;gap:14px;transition:all .3s;}
 .mini-card:hover{background:rgba(184,112,102,0.07);border-color:rgba(184,112,102,0.3);}
 .mini-icon{width:44px;height:44px;border-radius:12px;background:rgba(184,112,102,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .mini-body h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--off);margin-bottom:6px;}
-.mini-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
-.mini-meta{display:flex;align-items:center;justify-content:space-between;}
+.mini-body p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px;}
+.mini-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;}
 .mini-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:rgba(107,158,130,0.12);padding:4px 10px;border-radius:20px;}
 .mini-price{font-size:15px;color:var(--gold);font-weight:500;}
 #register{background:linear-gradient(135deg,#2C1D18 0%,#1E1614 100%);text-align:center;}
@@ -188,7 +188,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <h2 class="reveal">Scarica la guida<br><em>nella tua lingua</em></h2>
   <p class="section-intro reveal">Ogni guida contiene il programma completo in 4 fasi con esercizi illustrati, spiegazioni anatomiche e risorse di supporto.</p>
   <div class="guide-grid">
-    <div class="guide-card reveal" onclick="openModal('Rinascita del Piacere','Guide complète en Italiano · 4 phases · 12+ semaines','9,90','guida_rinascita_IT.html')">
+    <div class="guide-card reveal" onclick="openModal('Rinascita del Piacere','Guida completa in Italiano · 4 Fasi · 12+ settimane','9,90','guida_rinascita_IT.html')">
       <div class="guide-flag">🇮🇹</div><div class="guide-lang">Italiano</div>
       <div class="guide-title">Rinascita del Piacere</div>
       <div class="guide-desc">Programma completo in 4 fasi con esercizi di respiro, rieducazione sensoriale, mappatura corporea e integrazione del piacere.</div>
@@ -240,7 +240,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     </div>
     <div style="margin-bottom:16px;"><label class="field-label">Email</label><input type="email" class="field" placeholder="la.tua@email.com"></div>
     <div style="margin-bottom:28px;"><label class="field-label">Lingua preferita</label><select class="field"><option>🇮🇹 Italiano</option><option>🇫🇷 Français</option><option>🇬🇧 English</option></select></div>
-    <p class="form-consent">Registrandoti accetti la nostra <a href="privacy.html">Privacy Policy</a>. I tuoi dati non saranno mai condivisi con terze parti e potrai cancellarti in qualsiasi momento. La tua privacy è la nostra priorità assoluta.</p>
+    <p class="form-consent">Registrandoti accetti la nostra <a href="privacy.html">Privacy Policy</a>. I tuoi dati non saranno mai condivisi con terze parti e potrai cancellarti in qualsiasi momento.</p>
     <button class="btn-primary" style="width:100%;padding:18px;font-size:16px;">Crea account gratuito →</button>
     <div class="payment-methods"><div class="pay-badge">🔒 Pagamenti sicuri</div><div class="pay-badge">💳 Stripe</div><div class="pay-badge">🅿 PayPal</div><div class="pay-badge">📧 Download immediato</div></div>
   </div>
@@ -262,8 +262,8 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <div class="faq-list">
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Questa guida sostituisce il medico? <span class="ico">+</span></div><div class="faq-a">No. La guida è uno strumento di supporto e auto-cura, non un trattamento medico. Ti incoraggiamo sempre a consultare un professionista specializzato.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">I miei dati sono al sicuro? <span class="ico">+</span></div><div class="faq-a">Assolutamente sì. Non raccogliamo dati medici o sensibili. La registrazione richiede solo nome, email e lingua preferita. I pagamenti sono gestiti da Stripe e PayPal.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Come ricevo la guida dopo l'acquisto? <span class="ico">+</span></div><div class="faq-a">Immediatamente dopo il pagamento ricevi via email un link di download diretto. La guida è in formato HTML — leggibile su qualsiasi dispositivo, anche offline una volta scaricata.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli, licenze per organizzazioni o partnership con centri di supporto, scrivici a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eede1e0faefedfacefcebe0efe7fdfdefe0edeba3e9fbe7eaeba0e1fce9">[email&#160;protected]</a>. Offriamo tariffe speciali per ONG e associazioni.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Come ricevo la guida dopo l'acquisto? <span class="ico">+</span></div><div class="faq-a">Immediatamente dopo il pagamento ricevi via email un link di download diretto. La guida è in formato HTML — leggibile su qualsiasi dispositivo.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli scrivici a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eede1e0faefedfacefcebe0efe7fdfdefe0edeba3e9fbe7eaeba0e1fce9">[email&#160;protected]</a>. Offriamo tariffe speciali per ONG.</div></div>
   </div>
 </section>
 
@@ -329,7 +329,7 @@ function handlePayment(method){
   const url=stripeLinks[title];
   if(method==='stripe'){
     if(url){window.open(url,'_blank');}
-    else{alert('Link di pagamento non disponibile. Contatta contatto@florelles.com');}
+    else{alert('Link non disponibile. Contatta contatto@florelles.com');}
   } else {
     alert('PayPal sarà disponibile a breve. Usa il pagamento con carta.');
   }
