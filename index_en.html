@@ -67,11 +67,11 @@ h2 em{font-style:italic;color:var(--cr2);}
 .price-tag{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);}
 .btn-buy{background:var(--cr);color:white;border:none;padding:10px 22px;border-radius:40px;font-size:13px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;}
 #mini{background:linear-gradient(160deg,#231818 0%,#1A1210 100%);}
-.mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px;}
-.mini-card{background:rgba(250,246,241,0.03);border:1px solid rgba(250,246,241,0.08);border-radius:16px;padding:32px;display:flex;gap:20px;transition:all .3s;}
+.mini-grid{display:grid!important;grid-template-columns:repeat(2,1fr)!important;gap:16px;margin-top:48px;}
+.mini-card{background:rgba(250,246,241,0.03);border:1px solid rgba(250,246,241,0.08);border-radius:16px;padding:20px;display:flex!important;gap:14px;transition:all .3s;}
 .mini-card:hover{background:rgba(184,112,102,0.07);border-color:rgba(184,112,102,0.3);}
-.mini-icon{width:52px;height:52px;border-radius:14px;background:rgba(184,112,102,0.15);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-.mini-body h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--off);margin-bottom:8px;}
+.mini-icon{width:44px;height:44px;border-radius:12px;background:rgba(184,112,102,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.mini-body h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--off);margin-bottom:6px;}
 .mini-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
 .mini-meta{display:flex;align-items:center;justify-content:space-between;}
 .mini-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:rgba(107,158,130,0.12);padding:4px 10px;border-radius:20px;}
@@ -123,7 +123,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .reveal.visible{opacity:1;transform:none;}
 @keyframes fadeUp{from{opacity:1;transform:none;}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.mini-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;}.footer-links{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body style="background:#1E1614;color:#FAF6F1;">
@@ -197,12 +197,18 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <h2 class="reveal">Go deeper into<br><em>every exercise</em></h2>
   <p class="section-intro reveal">Short, focused modules on a single technique. Perfect for going further on a specific aspect of the journey.</p>
   <div class="mini-grid">
-    <div class="mini-card reveal"><div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div><div class="mini-body"><h4>Breathing & Pelvic Floor</h4><p>In-depth guide to diaphragmatic breathing techniques and coordination with pelvic relaxation.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3.90</span></div></div></div>
-    <div class="mini-card reveal"><div class="mini-icon">🤲</div><div class="mini-body"><h4>Therapeutic Touch & Mapping</h4><p>Self-exploration techniques, scar tissue approaches and detailed tissue care protocols.</p><div class="mini-meta"><span class="mini-tag">Phase 2</span><span class="mini-price">€3.90</span></div></div></div>
-    <div class="mini-card reveal"><div class="mini-icon">⚡</div><div class="mini-body"><h4>Pain Desensitisation</h4><p>Detailed protocol for the therapeutic window, thermal contrast and somatic reprocessing techniques.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span></div></div></div>
-    <div class="mini-card reveal"><div class="mini-icon">🌊</div><div class="mini-body"><h4>Modified Kegel & Active Release</h4><p>Complete pelvic floor exercise programme with focus on active release of chronic muscular hypertonia.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span></div></div></div>
-    <div class="mini-card reveal"><div class="mini-icon">✨</div><div class="mini-body"><h4>Reconnecting with Pleasure</h4><p>Autonomous exploration practices and daily integration of pleasure.</p><div class="mini-meta"><span class="mini-tag">Phase 4</span><span class="mini-price">€3.90</span></div></div></div>
-    <div class="mini-card reveal"><div class="mini-icon">💬</div><div class="mini-body"><h4>Partner Communication</h4><p>Practical tools for expressing needs and building gradual, safe intimacy.</p><div class="mini-meta"><span class="mini-tag">Advanced</span><span class="mini-price">€3.90</span></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div><div class="mini-body"><h4>Breathing & Pelvic Floor</h4><p>In-depth guide to diaphragmatic breathing techniques and coordination with pelvic relaxation.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05','_blank')">Buy →</button></div></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon">🤲</div><div class="mini-body"><h4>Therapeutic Touch & Mapping</h4><p>Self-exploration techniques, scar tissue approaches and detailed tissue care protocols.</p><div class="mini-meta"><span class="mini-tag">Phase 2</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06','_blank')">Buy →</button></div></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon">⚡</div><div class="mini-body"><h4>Pain Desensitisation</h4><p>Detailed protocol for the therapeutic window, thermal contrast and somatic reprocessing techniques.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07','_blank')">Buy →</button></div></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon">🌊</div><div class="mini-body"><h4>Modified Kegel & Active Release</h4><p>Complete pelvic floor exercise programme with focus on active release of chronic muscular hypertonia.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08','_blank')">Buy →</button></div></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon">✨</div><div class="mini-body"><h4>Reconnecting with Pleasure</h4><p>Autonomous exploration practices and daily integration of pleasure.</p><div class="mini-meta"><span class="mini-tag">Phase 4</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09','_blank')">Buy →</button></div></div></div></div>
+    <div class="mini-card reveal"><div class="mini-icon">💬</div><div class="mini-body"><h4>Partner Communication</h4><p>Practical tools for expressing needs and building gradual, safe intimacy.</p><div class="mini-meta"><span class="mini-tag">Advanced</span><span class="mini-price">€3.90</span>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a','_blank')">Buy →</button></div></div></div></div>
   </div>
 </section>
 
