@@ -263,14 +263,14 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Questa guida sostituisce il medico? <span class="ico">+</span></div><div class="faq-a">No. La guida è uno strumento di supporto e auto-cura, non un trattamento medico. Ti incoraggiamo sempre a consultare un professionista specializzato.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">I miei dati sono al sicuro? <span class="ico">+</span></div><div class="faq-a">Assolutamente sì. Non raccogliamo dati medici o sensibili. La registrazione richiede solo nome, email e lingua preferita. I pagamenti sono gestiti da Stripe e PayPal.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Come ricevo la guida dopo l'acquisto? <span class="ico">+</span></div><div class="faq-a">Immediatamente dopo il pagamento ricevi via email un link di download diretto. La guida è in formato HTML — leggibile su qualsiasi dispositivo.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli scrivici a <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8eede1e0faefedfacefcebe0efe7fdfdefe0edeba3e9fbe7eaeba0e1fce9">[email&#160;protected]</a>. Offriamo tariffe speciali per ONG.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli scrivici a <a href="mailto:contact@florelles.com" >contact@florelles.com</a>. Offriamo tariffe speciali per ONG.</div></div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Rinascita</div>
   <div class="footer-links"><a href="#guide">Guide</a><a href="#mini">Mini-Guide</a><a href="#about">Il Progetto</a><a href="privacy.html">Privacy</a><a href="contact.html">Contatti</a></div>
-  <div class="footer-note">© 2026 Rinascita · Tutti i diritti riservati · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1a7975746e7b796e5a687f747b7369697b74797f377d6f737e7f3475687d">[email&#160;protected]</a></div>
+  <div class="footer-note">© 2026 Rinascita · Tutti i diritti riservati · <a href="mailto:contact@florelles.com" >contact@florelles.com</a></div>
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -329,7 +329,7 @@ function handlePayment(method){
   const url=stripeLinks[title];
   if(method==='stripe'){
     if(url){window.open(url,'_blank');}
-    else{alert('Link non disponibile. Contatta contatto@florelles.com');}
+    else{alert('Link non disponibile. Contatta contact@florelles.com');}
   } else {
     alert('PayPal sarà disponibile a breve. Usa il pagamento con carta.');
   }
