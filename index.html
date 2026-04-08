@@ -142,6 +142,12 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <a href="#register" class="nav-links nav-cta">Inizia ora</a>
   </div>
 </nav>
+<div style="background:rgba(107,158,130,0.12);border-top:1px solid rgba(107,158,130,0.25);border-bottom:1px solid rgba(107,158,130,0.25);padding:12px;text-align:center;font-size:13px;font-weight:500;color:#6B9E82;letter-spacing:1px;">
+  🛡️ Soddisfatta o rimborsata · Garanzia 14 giorni · Nessuna domanda
+</div>
+<div style="background:rgba(107,158,130,0.12);border-top:1px solid rgba(107,158,130,0.25);border-bottom:1px solid rgba(107,158,130,0.25);padding:12px;text-align:center;font-size:13px;font-weight:500;color:#6B9E82;letter-spacing:1px;">
+  🛡️ Soddisfatta o rimborsata · Garanzia 14 giorni · Nessuna domanda
+</div>
 
 <section id="hero">
   <div class="hero-bg"></div>
@@ -192,18 +198,21 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
       <div class="guide-flag">🇮🇹</div><div class="guide-lang">Italiano</div>
       <div class="guide-title">Rinascita del Piacere</div>
       <div class="guide-desc">Programma completo in 4 fasi con esercizi di respiro, rieducazione sensoriale, mappatura corporea e integrazione del piacere.</div>
+      <a href="preview_IT.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Leggi anteprima gratuita</a>
       <div class="guide-price"><div class="price-tag"><sup>€</sup>9,90</div><button class="btn-buy">Acquista →</button></div>
     </div>
     <div class="guide-card reveal" onclick="openModal('Renaissance du Plaisir','Guide complète en Français · 4 phases · 12+ semaines','9,90','guide_renaissance_FR.html')">
       <div class="guide-flag">🇫🇷</div><div class="guide-lang">Français</div>
       <div class="guide-title">Renaissance du Plaisir</div>
       <div class="guide-desc">Programma completo in 4 fasi con esercizi di respiro, rieducazione sensoriale, mappatura corporea e integrazione del piacere.</div>
+      <a href="preview_IT.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Leggi anteprima gratuita</a>
       <div class="guide-price"><div class="price-tag"><sup>€</sup>9,90</div><button class="btn-buy">Acquista →</button></div>
     </div>
     <div class="guide-card reveal" onclick="openModal('Renaissance of Pleasure','Guide complète en English · 4 phases · 12+ semaines','9,90','guide_renaissance_EN.html')">
       <div class="guide-flag">🇬🇧</div><div class="guide-lang">English</div>
       <div class="guide-title">Renaissance of Pleasure</div>
       <div class="guide-desc">Programma completo in 4 fasi con esercizi di respiro, rieducazione sensoriale, mappatura corporea e integrazione del piacere.</div>
+      <a href="preview_IT.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Leggi anteprima gratuita</a>
       <div class="guide-price"><div class="price-tag"><sup>€</sup>9,90</div><button class="btn-buy">Acquista →</button></div>
     </div>
   </div>
@@ -231,20 +240,65 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 
 <section id="register">
   <div class="reg-wrap reveal">
-    <span class="section-eyebrow">Accesso & Download</span>
-    <h2>Crea il tuo<br><em>account gratuito</em></h2>
-    <p class="section-intro" style="margin:0 auto 40px;">Registrati per accedere alla libreria, salvare i tuoi acquisti e ricevere aggiornamenti sulle nuove guide. Nessun dato sensibile richiesto.</p>
-    <div class="form-row" style="margin-bottom:16px;">
-      <div><label class="field-label">Nome</label><input type="text" class="field" placeholder="Il tuo nome"></div>
-      <div><label class="field-label">Cognome</label><input type="text" class="field" placeholder="Il tuo cognome"></div>
+    <span class="section-eyebrow">La tua opinione conta</span>
+    <h2>Lascia il tuo <em>feedback</em></h2>
+    <p class="section-intro" style="margin:0 auto 40px;">Hai utilizzato una delle nostre guide? Condividi la tua esperienza — ci aiuta a migliorare.</p>
+
+    <div style="margin-top:40px;" id="feedback-form">
+      <div style="margin-bottom:24px;">
+        <label class="field-label">La tua valutazione</label>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:8px;" id="stars">
+          <span onclick="setRating(1)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(2)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(3)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(4)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(5)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+        </div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label class="field-label">Il tuo commento</label>
+        <textarea id="feedback-comment" class="field" placeholder="Raccontaci la tua esperienza..." rows="4" style="resize:vertical;"></textarea>
+      </div>
+      <div style="margin-bottom:24px;">
+        <label class="field-label">Email (opzionale)</label>
+        <input type="email" id="feedback-email" class="field" placeholder="la.tua@email.com">
+      </div>
+      <p class="form-consent">Il tuo feedback potrebbe essere pubblicato anonimamente sul sito. La tua email non sarà mai condivisa.</p>
+      <button class="btn-primary" style="width:100%;padding:18px;font-size:16px;" onclick="submitFeedback()">Invia Feedback →</button>
     </div>
-    <div style="margin-bottom:16px;"><label class="field-label">Email</label><input type="email" class="field" placeholder="la.tua@email.com"></div>
-    <div style="margin-bottom:28px;"><label class="field-label">Lingua preferita</label><select class="field"><option>🇮🇹 Italiano</option><option>🇫🇷 Français</option><option>🇬🇧 English</option></select></div>
-    <p class="form-consent">Registrandoti accetti la nostra <a href="privacy.html">Privacy Policy</a>. I tuoi dati non saranno mai condivisi con terze parti e potrai cancellarti in qualsiasi momento.</p>
-    <button class="btn-primary" style="width:100%;padding:18px;font-size:16px;">Crea account gratuito →</button>
-    <div class="payment-methods"><div class="pay-badge">🔒 Pagamenti sicuri</div><div class="pay-badge">💳 Stripe</div><div class="pay-badge">🅿 PayPal</div><div class="pay-badge">📧 Download immediato</div></div>
+
+    <div id="feedback-thanks" style="display:none;text-align:center;padding:40px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">🌸</div>
+      <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--cr2);">Grazie per il tuo feedback! 🌸</p>
+    </div>
   </div>
 </section>
+
+<script>
+let currentRating = 0;
+function setRating(n) {
+  currentRating = n;
+  document.querySelectorAll('.star').forEach((s,i) => {
+    s.textContent = i < n ? '★' : '☆';
+    s.style.color = i < n ? '#C9A96E' : '';
+  });
+}
+function submitFeedback() {
+  const comment = document.getElementById('feedback-comment').value;
+  const email = document.getElementById('feedback-email').value;
+  if (!comment && currentRating === 0) return;
+  const subject = encodeURIComponent('Feedback florelles.com — ' + currentRating + '/5 stelle');
+  const body = encodeURIComponent('Valutazione: ' + currentRating + '/5
+
+Commento:
+' + comment + '
+
+Email: ' + (email || 'non fornita'));
+  window.open('mailto:contact@florelles.com?subject=' + subject + '&body=' + body);
+  document.getElementById('feedback-form').style.display = 'none';
+  document.getElementById('feedback-thanks').style.display = 'block';
+}
+</script>
 
 <section id="testimonials">
   <span class="section-eyebrow reveal">Testimonianze</span>
@@ -263,14 +317,14 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Questa guida sostituisce il medico? <span class="ico">+</span></div><div class="faq-a">No. La guida è uno strumento di supporto e auto-cura, non un trattamento medico. Ti incoraggiamo sempre a consultare un professionista specializzato.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">I miei dati sono al sicuro? <span class="ico">+</span></div><div class="faq-a">Assolutamente sì. Non raccogliamo dati medici o sensibili. La registrazione richiede solo nome, email e lingua preferita. I pagamenti sono gestiti da Stripe e PayPal.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Come ricevo la guida dopo l'acquisto? <span class="ico">+</span></div><div class="faq-a">Immediatamente dopo il pagamento ricevi via email un link di download diretto. La guida è in formato HTML — leggibile su qualsiasi dispositivo.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli scrivici a <a href="mailto:contact@florelles.com" >contact@florelles.com</a>. Offriamo tariffe speciali per ONG.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Posso acquistare le guide per conto di un'associazione? <span class="ico">+</span></div><div class="faq-a">Sì. Per acquisti multipli scrivici a <a href="/cdn-cgi/l/email-protection#d5b6babba1b4b6a195b3b9baa7b0b9b9b0a6fbb6bab8"><span class="__cf_email__" data-cfemail="caa9a5a4beaba9be8aaca6a5b8afa6a6afb9e4a9a5a7">[email&#160;protected]</span></a>. Offriamo tariffe speciali per ONG.</div></div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Rinascita</div>
   <div class="footer-links"><a href="#guide">Guide</a><a href="#mini">Mini-Guide</a><a href="#about">Il Progetto</a><a href="privacy.html">Privacy</a><a href="contact.html">Contatti</a></div>
-  <div class="footer-note">© 2026 Rinascita · Tutti i diritti riservati · <a href="mailto:contact@florelles.com" >contact@florelles.com</a></div>
+  <div class="footer-note">© 2026 Rinascita · Tutti i diritti riservati · <a href="/cdn-cgi/l/email-protection#dab9b5b4aebbb9ae9abcb6b5a8bfb6b6bfa9f4b9b5b7"><span class="__cf_email__" data-cfemail="1f7c70716b7e7c6b5f7973706d7a73737a6c317c7072">[email&#160;protected]</span></a></div>
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -286,7 +340,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const miniLinks = {
   'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
   'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
@@ -329,15 +383,4 @@ function handlePayment(method){
   const url=stripeLinks[title];
   if(method==='stripe'){
     if(url){window.open(url,'_blank');}
-    else{alert('Link non disponibile. Contatta contact@florelles.com');}
-  } else {
-    alert('PayPal sarà disponibile a breve. Usa il pagamento con carta.');
-  }
-}
-</script><script>
-const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('visible'),i*80);});},{threshold:0.1});
-reveals.forEach(r=>obs.observe(r));
-</script>
-</body>
-</html>
+    else{alert('Link non disponibile. Contatta contact@florelles.com');

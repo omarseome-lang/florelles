@@ -142,6 +142,12 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <a href="#register" class="nav-cta nav-links">Get Started</a>
   </div>
 </nav>
+<div style="background:rgba(107,158,130,0.12);border-top:1px solid rgba(107,158,130,0.25);border-bottom:1px solid rgba(107,158,130,0.25);padding:12px;text-align:center;font-size:13px;font-weight:500;color:#6B9E82;letter-spacing:1px;">
+  🛡️ Satisfied or refunded · 14-day guarantee · No questions asked
+</div>
+<div style="background:rgba(107,158,130,0.12);border-top:1px solid rgba(107,158,130,0.25);border-bottom:1px solid rgba(107,158,130,0.25);padding:12px;text-align:center;font-size:13px;font-weight:500;color:#6B9E82;letter-spacing:1px;">
+  🛡️ Satisfied or refunded · 14-day guarantee · No questions asked
+</div>
 
 <section id="hero">
   <div class="hero-bg"></div>
@@ -214,17 +220,65 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 
 <section id="register">
   <div class="reg-wrap reveal">
-    <span class="section-eyebrow">Access & Download</span>
-    <h2>Create your<br><em>free account</em></h2>
-    <p class="section-intro" style="margin:0 auto 40px;">Sign up to access the library and receive updates on new guides. No sensitive data required.</p>
-    <div class="form-row" style="margin-bottom:16px;"><div><label class="field-label">First Name</label><input type="text" class="field" placeholder="Your first name"></div><div><label class="field-label">Last Name</label><input type="text" class="field" placeholder="Your last name"></div></div>
-    <div style="margin-bottom:16px;"><label class="field-label">Email</label><input type="email" class="field" placeholder="your@email.com"></div>
-    <div style="margin-bottom:28px;"><label class="field-label">Preferred Language</label><select class="field"><option>🇬🇧 English</option><option>🇮🇹 Italiano</option><option>🇫🇷 Français</option></select></div>
-    <p class="form-consent">By registering you agree to our <a href="privacy.html">Privacy Policy</a>. Your data will never be shared and you may unsubscribe at any time.</p>
-    <button class="btn-primary" style="width:100%;padding:18px;font-size:16px;">Create Free Account →</button>
-    <div class="payment-methods"><div class="pay-badge">🔒 Secure payments</div><div class="pay-badge">💳 Stripe</div><div class="pay-badge">🅿 PayPal</div><div class="pay-badge">📧 Instant download</div></div>
+    <span class="section-eyebrow">Your opinion matters</span>
+    <h2>Leave your <em>feedback</em></h2>
+    <p class="section-intro" style="margin:0 auto 40px;">Have you used one of our guides? Share your experience — it helps us improve.</p>
+
+    <div style="margin-top:40px;" id="feedback-form">
+      <div style="margin-bottom:24px;">
+        <label class="field-label">Your rating</label>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:8px;" id="stars">
+          <span onclick="setRating(1)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(2)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(3)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(4)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+          <span onclick="setRating(5)" style="font-size:32px;cursor:pointer;transition:transform .2s;" class="star">☆</span>
+        </div>
+      </div>
+      <div style="margin-bottom:16px;">
+        <label class="field-label">Your comment</label>
+        <textarea id="feedback-comment" class="field" placeholder="Share your experience..." rows="4" style="resize:vertical;"></textarea>
+      </div>
+      <div style="margin-bottom:24px;">
+        <label class="field-label">Email (optional)</label>
+        <input type="email" id="feedback-email" class="field" placeholder="your@email.com">
+      </div>
+      <p class="form-consent">Your feedback may be published anonymously on the site. Your email will never be shared.</p>
+      <button class="btn-primary" style="width:100%;padding:18px;font-size:16px;" onclick="submitFeedback()">Send Feedback →</button>
+    </div>
+
+    <div id="feedback-thanks" style="display:none;text-align:center;padding:40px 0;">
+      <div style="font-size:48px;margin-bottom:16px;">🌸</div>
+      <p style="font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:var(--cr2);">Thank you for your feedback! 🌸</p>
+    </div>
   </div>
 </section>
+
+<script>
+let currentRating = 0;
+function setRating(n) {
+  currentRating = n;
+  document.querySelectorAll('.star').forEach((s,i) => {
+    s.textContent = i < n ? '★' : '☆';
+    s.style.color = i < n ? '#C9A96E' : '';
+  });
+}
+function submitFeedback() {
+  const comment = document.getElementById('feedback-comment').value;
+  const email = document.getElementById('feedback-email').value;
+  if (!comment && currentRating === 0) return;
+  const subject = encodeURIComponent('Feedback florelles.com — ' + currentRating + '/5 stelle');
+  const body = encodeURIComponent('Valutazione: ' + currentRating + '/5
+
+Commento:
+' + comment + '
+
+Email: ' + (email || 'non fornita'));
+  window.open('mailto:contact@florelles.com?subject=' + subject + '&body=' + body);
+  document.getElementById('feedback-form').style.display = 'none';
+  document.getElementById('feedback-thanks').style.display = 'block';
+}
+</script>
 
 <section id="testimonials">
   <span class="section-eyebrow reveal">Testimonials</span>
@@ -243,14 +297,14 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Does this guide replace a doctor? <span class="ico">+</span></div><div class="faq-a">No. The guide is a tool for self-care and support, not medical treatment. We always encourage you to consult a specialist — the guide includes a section dedicated to finding the right clinical support.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Is my data secure? <span class="ico">+</span></div><div class="faq-a">Absolutely. We do not collect medical or sensitive data. Registration only requires name, email and preferred language. Payments are handled by Stripe and PayPal — we never see your card details.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">How do I receive the guide after purchase? <span class="ico">+</span></div><div class="faq-a">Immediately after payment you receive a direct download link by email. The guide is in HTML format — readable on any device, even offline once downloaded.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases, licences for organisations or partnerships with support centres, write to us at <a href="mailto:contact@florelles.com" >contact@florelles.com</a>. We offer special rates for NGOs and charities.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases, licences for organisations or partnerships with support centres, write to us at <a href="/cdn-cgi/l/email-protection#b3d0dcddc7d2d0c7f3d5dfdcc1d6dfdfd6c09dd0dcde"><span class="__cf_email__" data-cfemail="61020e0f1500021521070d0e13040d0d04124f020e0c">[email&#160;protected]</span></a>. We offer special rates for NGOs and charities.</div></div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Renaissance</div>
   <div class="footer-links"><a href="#guide">Guides</a><a href="#mini">Mini-Guides</a><a href="#about">The Project</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></div>
-  <div class="footer-note">© 2026 Renaissance · All rights reserved · <a href="mailto:contact@florelles.com" >contact@florelles.com</a></div>
+  <div class="footer-note">© 2026 Renaissance · All rights reserved · <a href="/cdn-cgi/l/email-protection#fa9995948e9b998eba9c9695889f96969f89d4999597"><span class="__cf_email__" data-cfemail="3e5d51504a5f5d4a7e5852514c5b52525b4d105d5153">[email&#160;protected]</span></a></div>
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -265,7 +319,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <p class="modal-note">🔒 Encrypted payment · Instant download · No medical data required</p>
   </div>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const miniLinks = {
   'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
   'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
@@ -308,15 +362,4 @@ function handlePayment(method){
   const url=stripeLinks[title];
   if(method==='stripe'){
     if(url){window.open(url,'_blank');}
-    else{alert('Payment link not available. Contact contact@florelles.com');}
-  } else {
-    alert('PayPal coming soon. Please use card payment.');
-  }
-}
-</script><script>
-const reveals=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(e=>{e.forEach((el,i)=>{if(el.isIntersecting)setTimeout(()=>el.target.classList.add('visible'),i*80);});},{threshold:0.1});
-reveals.forEach(r=>obs.observe(r));
-</script>
-</body>
-</html>
+    else{alert('Payment link not available. Contact contact
