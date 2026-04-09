@@ -32,7 +32,7 @@ h1{font-family:'Playfair Display',serif;font-size:clamp(48px,6vw,76px);font-weig
 h1 em{font-style:italic;color:var(--cr2);}
 .hero-sub{font-size:18px;font-weight:300;color:rgba(250,246,241,0.7);line-height:1.7;max-width:520px;margin-bottom:48px;}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-.btn-primary{background:var(--cr);color:white;border:none;padding:16px 36px;border-radius:50px;font-size:14px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Jost',sans-serif;}
+.btn-primary{background:var(--cr);color:white;border:none;padding:16px 36px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:1px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Jost',sans-serif;}
 .btn-primary:hover{background:var(--cr2);transform:translateY(-2px);}
 .btn-outline{background:transparent;color:var(--off);border:1px solid rgba(250,246,241,0.25);padding:16px 36px;border-radius:50px;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s;font-family:'Jost',sans-serif;}
 section{padding:100px 60px;}
@@ -72,13 +72,13 @@ h2 em{font-style:italic;color:var(--cr2);}
 .mini-card:hover{background:rgba(184,112,102,0.07);border-color:rgba(184,112,102,0.3);}
 .mini-icon{width:44px;height:44px;border-radius:12px;background:rgba(184,112,102,0.15);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .mini-body h4{font-family:'Playfair Display',serif;font-size:16px;color:var(--off);margin-bottom:6px;}
-.mini-body p{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
-.mini-meta{display:flex;align-items:center;justify-content:space-between;}
+.mini-body p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px;}
+.mini-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;}
 .mini-tag{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:rgba(107,158,130,0.12);padding:4px 10px;border-radius:20px;}
 .mini-price{font-size:15px;color:var(--gold);font-weight:500;}
 #register{background:linear-gradient(135deg,#2C1D18 0%,#1E1614 100%);text-align:center;}
 .reg-wrap{max-width:600px;margin:0 auto;}
-.field{background:rgba(250,246,241,0.06);border:1px solid rgba(250,246,241,0.12);border-radius:12px;padding:16px 20px;font-size:15px;color:var(--off);font-family:'Jost',sans-serif;width:100%;}
+.field{background:rgba(250,246,241,0.06);border:1px solid rgba(250,246,241,0.12);border-radius:12px;padding:16px 20px;font-size:15px;color:var(--off);font-family:'Jost',sans-serif;width:100%;transition:border-color .3s;}
 .field:focus{outline:none;border-color:var(--cr);}
 .field::placeholder{color:var(--muted);}
 .field-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;text-align:left;display:block;}
@@ -86,7 +86,7 @@ h2 em{font-style:italic;color:var(--cr2);}
 .form-consent{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:28px;text-align:left;}
 .form-consent a{color:var(--cr);}
 .payment-methods{display:flex;gap:12px;justify-content:center;margin-top:24px;flex-wrap:wrap;}
-.pay-badge{background:rgba(250,246,241,0.06);border:1px solid rgba(250,246,241,0.1);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--muted);}
+.pay-badge{background:rgba(250,246,241,0.06);border:1px solid rgba(250,246,241,0.1);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px;}
 #testimonials{background:var(--sand);}
 #testimonials h2{color:var(--dark);}
 #testimonials h2 em{color:var(--cr);}
@@ -114,7 +114,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .modal-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--muted);font-size:24px;cursor:pointer;}
 .modal h3{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:var(--off);margin-bottom:8px;}
 .modal-price{font-family:'Playfair Display',serif;font-size:40px;color:var(--gold);margin:16px 0;}
-.modal-desc{font-size:14px;color:var(--muted);margin-bottom:28px;}
+.modal-desc{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.65;}
 .pay-btn{width:100%;padding:16px;border-radius:12px;border:none;font-size:15px;font-weight:600;cursor:pointer;font-family:'Jost',sans-serif;margin-bottom:12px;}
 .pay-stripe{background:#635BFF;color:white;}
 .pay-paypal{background:#FFD140;color:#003087;}
@@ -123,7 +123,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .reveal.visible{opacity:1;transform:none;}
 @keyframes fadeUp{from{opacity:1;transform:none;}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
 </style>
 </head>
 <body style="background:#1E1614;color:#FAF6F1;">
@@ -139,7 +139,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
       <a href="index_fr.html" class="lang-btn">FR</a>
       <a href="index_en.html" class="lang-btn active">EN</a>
     </div>
-    <a href="#register" class="nav-cta nav-links">Get Started</a>
+    <a href="#register" class="nav-links nav-cta">Get Started</a>
   </div>
 </nav>
 <div style="background:rgba(107,158,130,0.12);border-top:1px solid rgba(107,158,130,0.25);border-bottom:1px solid rgba(107,158,130,0.25);padding:12px;text-align:center;font-size:13px;font-weight:500;color:#6B9E82;letter-spacing:1px;">
@@ -172,7 +172,9 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <div class="about-text reveal">
       <span class="section-eyebrow">The Project</span>
       <h2>Why <em>Renaissance</em><br>exists</h2>
-      <div class="quote-block"><p>"Perhaps you woke up this morning feeling that a part of you has never truly been yours. Perhaps you felt pain where there should have been pleasure."</p></div>
+      <div class="quote-block">
+        <p>"Perhaps you woke up this morning feeling that a part of you has never truly been yours. Perhaps you felt pain where there should have been pleasure."</p>
+      </div>
       <p>Over 200 million women worldwide have experienced female genital mutilation. Many believe sensitivity is lost forever. It is not.</p>
       <p>Through neuroplasticity and pelvic sensory re-education, it is possible to awaken nerve pathways that had "fallen asleep". Our guides are the result of years of clinical research in urology and sexology.</p>
       <a href="#guide" class="btn-primary" style="margin-top:8px;">See the guides →</a>
@@ -180,7 +182,7 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
     <div class="about-visual reveal">
       <div class="stat-card"><div class="big">9–11<sup style="font-size:22px">cm</sup></div><div class="desc">The clitoral structure extends inside the body — in the vast majority of FGM cases it remains intact and functional.</div></div>
       <div class="stat-card"><div class="big" style="font-size:36px;color:#6B9E82;">4 Phases</div><div class="desc">The progressive programme: Breathing · Awareness · Re-education · Pleasure integration. At your own pace.</div></div>
-      <div class="stat-card"><div class="big" style="font-size:36px;color:#C9A96E;">Secure</div><div class="desc">No medical data required. Anonymous download. Protected payment. Your privacy is absolute.</div></div>
+      <div class="stat-card"><div class="big" style="font-size:36px;color:#C9A96E;">Sécurisé</div><div class="desc">No medical data required. Anonymous download. Protected payment. Your privacy is absolute.</div></div>
     </div>
   </div>
 </section>
@@ -190,9 +192,27 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <h2 class="reveal">Download the guide<br><em>in your language</em></h2>
   <p class="section-intro reveal">Each guide contains the complete 4-phase programme with illustrated exercises, anatomical explanations and support resources.</p>
   <div class="guide-grid">
-    <div class="guide-card reveal" onclick="openModal('Rinascita del Piacere','Complete guide in Italiano · 4 phases · 12+ weeks','9.90','guida_rinascita_IT.html')"><div class="guide-flag">🇮🇹</div><div class="guide-lang">Italiano</div><div class="guide-title">Rinascita del Piacere</div><div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div><div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div></div>
-    <div class="guide-card reveal" onclick="openModal('Renaissance du Plaisir','Complete guide in Français · 4 phases · 12+ weeks','9.90','guide_renaissance_FR.html')"><div class="guide-flag">🇫🇷</div><div class="guide-lang">Français</div><div class="guide-title">Renaissance du Plaisir</div><div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div><div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div></div>
-    <div class="guide-card reveal" onclick="openModal('Renaissance of Pleasure','Complete guide in English · 4 phases · 12+ weeks','9.90','guide_renaissance_EN.html')"><div class="guide-flag">🇬🇧</div><div class="guide-lang">English</div><div class="guide-title">Renaissance of Pleasure</div><div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div><div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div></div>
+    <div class="guide-card reveal" onclick="openModal('Rinascita del Piacere','Guide complète en Italiano · 4 phases · 12+ semaines','9.90','guida_rinascita_IT.html')">
+      <div class="guide-flag">🇮🇹</div><div class="guide-lang">Italiano</div>
+      <div class="guide-title">Rinascita del Piacere</div>
+      <div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div>
+      <a href="preview_IT.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Read free preview</a>
+      <div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div>
+    </div>
+    <div class="guide-card reveal" onclick="openModal('Renaissance du Plaisir','Guide complète en Français · 4 phases · 12+ semaines','9.90','guide_renaissance_FR.html')">
+      <div class="guide-flag">🇫🇷</div><div class="guide-lang">Français</div>
+      <div class="guide-title">Renaissance du Plaisir</div>
+      <div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div>
+      <a href="preview_FR.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Read free preview</a>
+      <div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div>
+    </div>
+    <div class="guide-card reveal" onclick="openModal('Renaissance of Pleasure','Guide complète en English · 4 phases · 12+ semaines','9.90','guide_renaissance_EN.html')">
+      <div class="guide-flag">🇬🇧</div><div class="guide-lang">English</div>
+      <div class="guide-title">Renaissance of Pleasure</div>
+      <div class="guide-desc">Complete 4-phase programme with breathing exercises, sensory re-education and pleasure integration.</div>
+      <a href="preview_EN.html" style="display:block;font-size:12px;color:var(--cr2);text-decoration:none;margin-bottom:12px;letter-spacing:1px;" onclick="event.stopPropagation()">→ Read free preview</a>
+      <div class="guide-price"><div class="price-tag"><sup>€</sup>9.90</div><button class="btn-buy">Buy →</button></div>
+    </div>
   </div>
 </section>
 
@@ -292,17 +312,17 @@ Email: ' + (email || 'non fornita'));
   <span class="section-eyebrow reveal">Frequently Asked Questions</span>
   <h2 class="reveal">Do you have <em>questions</em>?</h2>
   <div class="faq-list">
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Does this guide replace a doctor? <span class="ico">+</span></div><div class="faq-a">No. The guide is a tool for self-care and support, not medical treatment. We always encourage you to consult a specialist — the guide includes a section dedicated to finding the right clinical support.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Is my data secure? <span class="ico">+</span></div><div class="faq-a">Absolutely. We do not collect medical or sensitive data. Registration only requires name, email and preferred language. Payments are handled by Stripe and PayPal — we never see your card details.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">How do I receive the guide after purchase? <span class="ico">+</span></div><div class="faq-a">Immediately after payment you receive a direct download link by email. The guide is in HTML format — readable on any device, even offline once downloaded.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases, licences for organisations or partnerships with support centres, write to us at <a href="/cdn-cgi/l/email-protection#b3d0dcddc7d2d0c7f3d5dfdcc1d6dfdfd6c09dd0dcde"><span class="__cf_email__" data-cfemail="61020e0f1500021521070d0e13040d0d04124f020e0c">[email&#160;protected]</span></a>. We offer special rates for NGOs and charities.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Does this guide replace a doctor? <span class="ico">+</span></div><div class="faq-a">No. The guide is a tool for self-care and support, not medical treatment. We always encourage you to consult a specialist.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Is my data secure? <span class="ico">+</span></div><div class="faq-a">Absolutely. We do not collect medical or sensitive data. Registration only requires name, email and preferred language. Payments are handled by Stripe and PayPal.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">How do I receive the guide after purchase? <span class="ico">+</span></div><div class="faq-a">Immediately after payment you receive a direct download link by email. The guide is in HTML format — readable on any device.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases or partnerships with support centres, write to us at <a href="/cdn-cgi/l/email-protection#93f0fcfde7f2f0e7d3f5fffce1f6fffff6e0bdf0fcfe"><span class="__cf_email__" data-cfemail="fa9995948e9b998eba9c9695889f96969f89d4999597">[email&#160;protected]</span></a>. We offer special rates for NGOs and charities.</div></div>
   </div>
 </section>
 
 <footer>
   <div class="footer-logo">Renaissance</div>
   <div class="footer-links"><a href="#guide">Guides</a><a href="#mini">Mini-Guides</a><a href="#about">The Project</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></div>
-  <div class="footer-note">© 2026 Renaissance · All rights reserved · <a href="/cdn-cgi/l/email-protection#fa9995948e9b998eba9c9695889f96969f89d4999597"><span class="__cf_email__" data-cfemail="3e5d51504a5f5d4a7e5852514c5b52525b4d105d5153">[email&#160;protected]</span></a></div>
+  <div class="footer-note">© 2026 Renaissance · All rights reserved · <a href="/cdn-cgi/l/email-protection#d3b0bcbda7b2b0a793b5bfbca1b6bfbfb6a0fdb0bcbe"><span class="__cf_email__" data-cfemail="f1929e9f85909285b1979d9e83949d9d9482df929e9c">[email&#160;protected]</span></a></div>
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -316,9 +336,9 @@ Email: ' + (email || 'non fornita'));
     <button class="pay-btn pay-paypal" onclick="handlePayment('paypal')">🅿 Pay with PayPal</button>
     <p class="modal-note">🔒 Encrypted payment · Instant download · No medical data required</p>
   </div>
-
 </div>
-<script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const miniLinks = {
   'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
   'Tocco Terapeutico & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
@@ -361,8 +381,9 @@ function handlePayment(method){
   const url=stripeLinks[title];
   if(method==='stripe'){
     if(url){window.open(url,'_blank');}
-    else{alert('Payment link not available. Contact contact
-               </script>
-               </div>
+    else{alert('Lien de paiement non disponible. Contactez contact@florelles.com'
+}
+}
+</script>
 </body>
 </html>
