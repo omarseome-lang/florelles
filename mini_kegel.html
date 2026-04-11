@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kegel Modificati & Rilascio Attivo — Mini-Guide · florelles.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:#FAF6F1;color:#2A1A14;line-height:1.8;}
+.topbar{background:#1E1614;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.brand{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#D4998F;text-decoration:none;}
+.lang-tabs{display:flex;gap:8px;}
+.lang-tab{padding:5px 12px;border-radius:20px;border:1px solid rgba(184,112,102,0.4);background:transparent;font-size:11px;color:#D4998F;cursor:pointer;font-family:'Jost',sans-serif;}
+.lang-tab.active{background:#B87066;color:white;border-color:#B87066;}
+.badge{background:rgba(107,158,130,0.2);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);}
+.content{max-width:760px;margin:0 auto;padding:60px 40px;}
+.content-section{display:none;}
+.content-section.active{display:block;}
+.phase-badge{display:inline-block;background:rgba(107,158,130,0.12);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);margin-bottom:24px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:#1E1614;margin-bottom:16px;line-height:1.15;}
+h1 em{font-style:italic;color:#B87066;}
+.intro{font-size:17px;color:#6B4A3C;margin-bottom:32px;line-height:1.75;max-width:620px;}
+.emotional-opening{background:linear-gradient(135deg,#3D2820,#2C1D18);border-radius:20px;padding:36px 40px;margin:32px 0 48px;}
+.emotional-opening p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.8;color:rgba(250,246,241,0.9);margin:0;}
+.emotional-opening .author{font-family:'Jost',sans-serif;font-size:12px;color:#D4998F;letter-spacing:1px;text-transform:uppercase;margin-top:16px;font-style:normal;}
+h2{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:#B87066;margin:48px 0 16px;}
+h3{font-family:'Playfair Display',serif;font-size:20px;color:#3D2820;margin:32px 0 12px;}
+p{font-size:16px;color:#4A3830;margin-bottom:16px;}
+.safety-box{background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.3);border-radius:16px;padding:24px 28px;margin:32px 0;}
+.safety-box .safety-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;margin-bottom:14px;display:block;}
+.safety-list{list-style:none;}
+.safety-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#4A3830;margin-bottom:10px;}
+.safety-list li::before{content:"✓";color:#6B9E82;font-weight:700;flex-shrink:0;margin-top:2px;}
+.safety-list li.warning::before{content:"⚠";color:#C9A96E;}
+.week-table{width:100%;border-collapse:collapse;margin:24px 0;}
+.week-table th{background:#1E1614;color:#D4998F;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;}
+.week-table td{padding:12px 16px;font-size:14px;color:#4A3830;border-bottom:1px solid rgba(184,112,102,0.1);}
+.week-table tr:nth-child(even) td{background:rgba(184,112,102,0.03);}
+.week-table .week-num{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#B87066;}
+.exercise-card{background:white;border:1px solid rgba(184,112,102,0.15);border-radius:20px;padding:32px;margin:24px 0;box-shadow:0 4px 20px rgba(61,40,32,0.06);}
+.exercise-card .num{font-family:'Playfair Display',serif;font-size:48px;font-style:italic;color:#D4998F;line-height:1;margin-bottom:8px;}
+.exercise-card h3{margin:0 0 12px;font-size:20px;}
+.exercise-card .duration{display:inline-block;background:rgba(107,158,130,0.1);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-top:8px;}
+.step-list{list-style:none;margin:16px 0;counter-reset:step;}
+.step-list li{display:flex;gap:16px;margin-bottom:16px;font-size:15px;color:#4A3830;counter-increment:step;}
+.step-list li::before{content:counter(step);min-width:28px;height:28px;background:#B87066;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;}
+.audio-guide{background:#F2E8DC;border-radius:16px;padding:24px 28px;margin:20px 0;}
+.audio-guide .audio-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:14px;display:block;}
+.audio-guide .script{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:#3D2820;line-height:2;}
+.tip-box{background:rgba(184,112,102,0.06);border:1px solid rgba(184,112,102,0.2);border-radius:16px;padding:20px 24px;margin:24px 0;}
+.tip-box .tip-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:8px;}
+.tip-box p{margin:0;font-size:14px;color:#6B4A3C;}
+.cta-box{background:#1E1614;border-radius:20px;padding:40px;text-align:center;margin-top:56px;}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#D4998F;margin-bottom:12px;}
+.cta-box p{color:rgba(250,246,241,0.6);font-size:14px;margin-bottom:24px;}
+.btn-primary{display:inline-block;background:#B87066;color:white;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:1px;}
+.btn-outline{display:inline-block;background:transparent;color:#D4998F;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;border:1px solid rgba(212,153,143,0.4);margin-left:12px;}
+.back{display:block;text-align:center;margin-top:24px;font-size:12px;color:#8C7068;text-decoration:none;letter-spacing:1px;text-transform:uppercase;}
+@media(max-width:600px){.content{padding:40px 20px;}.topbar{padding:14px 20px;}.btn-outline{margin-left:0;margin-top:12px;display:block;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html" class="brand">florelles.com</a>
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="showLang('it',this)">🇮🇹 IT</button>
+    <button class="lang-tab" onclick="showLang('fr',this)">🇫🇷 FR</button>
+    <button class="lang-tab" onclick="showLang('en',this)">🇬🇧 EN</button>
+  </div>
+  <span class="badge">Mini-Guide · Fase 3b</span>
+</div>
+<div class="content">
+<div class="content-section active" id="lang-it">
+<div class="phase-badge">Fase 3b — Tono Muscolare</div>
+<h1>Kegel Modificati &amp;<br><em>Rilascio Attivo</em></h1>
+<p class="intro">I Kegel tradizionali non sono sempre indicati dopo la MGF. Questa guida introduce una versione modificata che prioritizza il rilascio dell'ipertono muscolare rispetto al rinforzo.</p>
+<div class="emotional-opening">
+<p>"Molti esercizi per il pavimento pelvico ti insegnano a contrarre. Questa guida ti insegna a rilasciare — perché spesso è il rilascio ciò di cui hai più bisogno. Un muscolo cronicamente contratto non può sentire il piacere."</p>
+<div class="author">— Prima il rilascio, poi il rinforzo</div>
+</div>
+<h2>Perché i Kegel tradizionali possono peggiorare la situazione</h2>
+<p>Le donne con MGF spesso sviluppano <strong>ipertono pelvico</strong> — un eccessivo tono muscolare involontario causato da trauma, tensione cronica o dolore. I Kegel tradizionali (contrai-rilascia) in questo contesto possono aumentare la tensione invece di ridurla.</p>
+<p>I Kegel Modificati che presentiamo qui invertono la priorità: <strong>prima impariamo a rilasciare completamente, poi a contrarre delicatamente</strong>.</p>
+<h2>Piano settimanale progressivo</h2>
+<table class="week-table">
+<tr><th>Settimana</th><th>Esercizio</th><th>Durata</th><th>Focus</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Solo rilascio — nessuna contrazione</td><td>10 min</td><td>Rilascio ipertono</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Rilascio + micro-contrazione (20%)</td><td>15 min</td><td>Consapevolezza muscolare</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Sequenza rilascio-contrazione-rilascio</td><td>15 min</td><td>Coordinazione</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Kegel modificati completi</td><td>20 min</td><td>Tono funzionale</td></tr>
+</table>
+<h2>Gli esercizi</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Rilascio Progressivo — Base</h3>
+<p>Il punto di partenza: imparare a rilasciare completamente prima di rafforzare.</p>
+<ol class="step-list">
+<li>Sdraiati sulla schiena, ginocchia piegate, piedi a terra. Assicurati che le gambe siano completamente rilassate.</li>
+<li>Inspira profondamente — durante l'inspirazione, lascia che il pavimento pelvico scenda naturalmente.</li>
+<li>Espira lentamente (6 secondi) — durante l'espirazione, immagina che il pavimento pelvico si allarghi come un fiore che si apre.</li>
+<li>Non contrarre nulla. L'unico obiettivo è il rilascio completo.</li>
+<li>Ripeti 10 volte, poi osserva se senti differenze rispetto all'inizio.</li>
+</ol>
+<span class="duration">⏱ 10 minuti · Ogni giorno · Settimana 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Micro-Contrazione Consapevole</h3>
+<p>Una volta padroneggiato il rilascio, introduciamo contrazioni molto leggere — massimo il 20% della forza massima.</p>
+<ol class="step-list">
+<li>Dopo 5 respiri di rilascio, durante un'espirazione, solleva gentilmente il pavimento pelvico — come se volessi impedire a una goccia di cadere.</li>
+<li>Mantieni questa micro-contrazione per 3 secondi — senza smettere di respirare.</li>
+<li>Rilascia completamente per 6 secondi — il rilascio deve durare il doppio della contrazione.</li>
+<li>Ripeti 5 volte. Se senti tensione, riduci ulteriormente la forza della contrazione.</li>
+</ol>
+<span class="duration">⏱ 15 minuti · 4 volte a settimana · Settimana 2</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Kegel Modificato Completo</h3>
+<p>La sequenza completa: rilascio — contrazione graduale — rilascio prolungato.</p>
+<ol class="step-list">
+<li>Inizia con 3 respiri di rilascio completo.</li>
+<li>Inspira — lascia scendere il pavimento pelvico.</li>
+<li>A metà espirazione — solleva il pavimento pelvico al 30% per 5 secondi.</li>
+<li>Nella seconda metà dell'espirazione — rilascia completamente per 5 secondi.</li>
+<li>Pausa di 5 secondi di riposo assoluto. Ripeti 8 volte.</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">🎙 Guida vocale</span>
+<div class="script">
+"Inspira... il pavimento scende..."<br>
+"A metà espirazione... solleva delicatamente... trattieni..."<br>
+"Rilascia completamente... allargati... spazio..."<br>
+"Riposo... nessuna tensione..."
+</div>
+</div>
+<span class="duration">⏱ 20 minuti · 5 volte a settimana · Settimane 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Consiglio clinico</div>
+<p>Se durante i Kegel senti dolore o la tensione aumenta invece di diminuire, stai contraendo troppo. Riduci la forza al 10% e lavora prima sul rilascio per almeno un'altra settimana.</p>
+</div>
+<div class="cta-box">
+<h3>Prossimo passo</h3>
+<p>La Fase 4 introduce la riconnessione al piacere — l'integrazione di tutto il lavoro precedente.</p>
+<a href="index.html#mini" class="btn-primary">Scopri le altre Mini-Guide →</a>
+<a href="guida_rinascita_IT.html" class="btn-outline">Guida Completa</a>
+</div>
+<a href="index.html" class="back">← Torna al sito</a>
+</div>
+<div class="content-section" id="lang-fr">
+<div class="phase-badge">Phase 3b — Tonus Musculaire</div>
+<h1>Kegel Modifiés &amp;<br><em>Relâchement Actif</em></h1>
+<p class="intro">Les Kegel traditionnels ne sont pas toujours indiqués après les MGF. Ce guide introduit une version modifiée qui privilégie le relâchement de l'hypertonicité musculaire.</p>
+<div class="emotional-opening">
+<p>"De nombreux exercices pour le plancher pelvien vous apprennent à contracter. Ce guide vous apprend à relâcher — car souvent c'est le relâchement dont vous avez le plus besoin. Un muscle chroniquement contracté ne peut pas ressentir le plaisir."</p>
+<div class="author">— D'abord le relâchement, ensuite le renforcement</div>
+</div>
+<h2>Plan hebdomadaire progressif</h2>
+<table class="week-table">
+<tr><th>Semaine</th><th>Exercice</th><th>Durée</th><th>Focus</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Relâchement seul — aucune contraction</td><td>10 min</td><td>Relâcher l'hypertonus</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Relâchement + micro-contraction (20%)</td><td>15 min</td><td>Conscience musculaire</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Séquence relâchement-contraction-relâchement</td><td>15 min</td><td>Coordination</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Kegel modifiés complets</td><td>20 min</td><td>Tonus fonctionnel</td></tr>
+</table>
+<h2>Les exercices</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Relâchement Progressif — Base</h3>
+<ol class="step-list">
+<li>Allongez-vous sur le dos, genoux pliés, pieds à plat. Assurez-vous que les jambes sont complètement relâchées.</li>
+<li>Inspirez profondément — pendant l'inspiration, laissez le plancher pelvien descendre naturellement.</li>
+<li>Expirez lentement (6 secondes) — imaginez que le plancher pelvien s'élargit comme une fleur qui s'ouvre.</li>
+<li>Ne contractez rien. Le seul objectif est le relâchement complet.</li>
+<li>Répétez 10 fois.</li>
+</ol>
+<span class="duration">⏱ 10 minutes · Chaque jour · Semaine 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Micro-Contraction Consciente</h3>
+<ol class="step-list">
+<li>Après 5 respirations de relâchement, lors d'une expiration, soulevez doucement le plancher pelvien — maximum 20% de votre force.</li>
+<li>Maintenez cette micro-contraction pendant 3 secondes — sans arrêter de respirer.</li>
+<li>Relâchez complètement pendant 6 secondes — le relâchement doit durer le double de la contraction.</li>
+<li>Répétez 5 fois. Si vous sentez de la tension, réduisez encore la force.</li>
+</ol>
+<span class="duration">⏱ 15 minutes · 4 fois par semaine · Semaine 2</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Kegel Modifié Complet</h3>
+<ol class="step-list">
+<li>Commencez par 3 respirations de relâchement complet.</li>
+<li>Inspirez — laissez descendre le plancher pelvien.</li>
+<li>À mi-expiration — soulevez le plancher pelvien à 30% pendant 5 secondes.</li>
+<li>Dans la deuxième moitié de l'expiration — relâchez complètement pendant 5 secondes.</li>
+<li>Pause de 5 secondes de repos absolu. Répétez 8 fois.</li>
+</ol>
+<span class="duration">⏱ 20 minutes · 5 fois par semaine · Semaines 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Conseil clinique</div>
+<p>Si pendant les Kegel vous ressentez de la douleur ou si la tension augmente au lieu de diminuer, vous contractez trop. Réduisez la force à 10% et travaillez d'abord sur le relâchement pendant au moins une semaine de plus.</p>
+</div>
+<div class="cta-box">
+<h3>Prochaine étape</h3>
+<p>La Phase 4 introduit la reconnexion au plaisir.</p>
+<a href="index_fr.html#mini" class="btn-primary">Découvrir les autres Mini-Guides →</a>
+<a href="guide_renaissance_FR.html" class="btn-outline">Guide Complet</a>
+</div>
+<a href="index_fr.html" class="back">← Retour au site</a>
+</div>
+<div class="content-section" id="lang-en">
+<div class="phase-badge">Phase 3b — Muscle Tone</div>
+<h1>Modified Kegel &amp;<br><em>Active Release</em></h1>
+<p class="intro">Traditional Kegel exercises are not always appropriate after FGM. This guide introduces a modified version that prioritises releasing muscular hypertonia over strengthening.</p>
+<div class="emotional-opening">
+<p>"Many pelvic floor exercises teach you to contract. This guide teaches you to release — because often release is what you need most. A chronically contracted muscle cannot feel pleasure."</p>
+<div class="author">— Release first, then strengthen</div>
+</div>
+<h2>Progressive weekly plan</h2>
+<table class="week-table">
+<tr><th>Week</th><th>Exercise</th><th>Duration</th><th>Focus</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Release only — no contraction</td><td>10 min</td><td>Release hypertonia</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Release + micro-contraction (20%)</td><td>15 min</td><td>Muscular awareness</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Release-contraction-release sequence</td><td>15 min</td><td>Coordination</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Full modified Kegel</td><td>20 min</td><td>Functional tone</td></tr>
+</table>
+<h2>The exercises</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Progressive Release — Foundation</h3>
+<ol class="step-list">
+<li>Lie on your back, knees bent, feet flat. Ensure legs are completely relaxed.</li>
+<li>Inhale deeply — during inhalation, allow the pelvic floor to lower naturally.</li>
+<li>Exhale slowly (6 seconds) — imagine the pelvic floor widening like a flower opening.</li>
+<li>Do not contract anything. The only goal is complete release.</li>
+<li>Repeat 10 times.</li>
+</ol>
+<span class="duration">⏱ 10 minutes · Every day · Week 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Conscious Micro-Contraction</h3>
+<ol class="step-list">
+<li>After 5 release breaths, during an exhalation, gently lift the pelvic floor — maximum 20% of your strength.</li>
+<li>Hold this micro-contraction for 3 seconds — without stopping breathing.</li>
+<li>Release completely for 6 seconds — release should last twice as long as contraction.</li>
+<li>Repeat 5 times. If you feel tension, reduce force further.</li>
+</ol>
+<span class="duration">⏱ 15 minutes · 4 times a week · Week 2</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Full Modified Kegel</h3>
+<ol class="step-list">
+<li>Begin with 3 complete release breaths.</li>
+<li>Inhale — allow the pelvic floor to lower.</li>
+<li>At mid-exhalation — lift the pelvic floor to 30% for 5 seconds.</li>
+<li>In the second half of exhalation — release completely for 5 seconds.</li>
+<li>5-second rest. Repeat 8 times.</li>
+</ol>
+<span class="duration">⏱ 20 minutes · 5 times a week · Weeks 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Clinical tip</div>
+<p>If during Kegel exercises you feel pain or tension increases instead of decreasing, you are contracting too much. Reduce force to 10% and work on release for at least another week.</p>
+</div>
+<div class="cta-box">
+<h3>Next step</h3>
+<p>Phase 4 introduces reconnecting with pleasure — integrating all previous work.</p>
+<a href="index_en.html#mini" class="btn-primary">Discover the other Mini-Guides →</a>
+<a href="guide_renaissance_EN.html" class="btn-outline">Complete Guide</a>
+</div>
+<a href="index_en.html" class="back">← Back to site</a>
+</div>
+</div>
+<script>
+function showLang(lang, btn) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

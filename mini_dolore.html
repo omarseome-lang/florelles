@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desensibilizzazione al Dolore — Mini-Guide · florelles.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:#FAF6F1;color:#2A1A14;line-height:1.8;}
+.topbar{background:#1E1614;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.brand{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#D4998F;text-decoration:none;}
+.lang-tabs{display:flex;gap:8px;}
+.lang-tab{padding:5px 12px;border-radius:20px;border:1px solid rgba(184,112,102,0.4);background:transparent;font-size:11px;color:#D4998F;cursor:pointer;font-family:'Jost',sans-serif;}
+.lang-tab.active{background:#B87066;color:white;border-color:#B87066;}
+.badge{background:rgba(107,158,130,0.2);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);}
+.content{max-width:760px;margin:0 auto;padding:60px 40px;}
+.content-section{display:none;}
+.content-section.active{display:block;}
+.phase-badge{display:inline-block;background:rgba(107,158,130,0.12);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);margin-bottom:24px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:#1E1614;margin-bottom:16px;line-height:1.15;}
+h1 em{font-style:italic;color:#B87066;}
+.intro{font-size:17px;color:#6B4A3C;margin-bottom:32px;line-height:1.75;max-width:620px;}
+.emotional-opening{background:linear-gradient(135deg,#3D2820,#2C1D18);border-radius:20px;padding:36px 40px;margin:32px 0 48px;}
+.emotional-opening p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.8;color:rgba(250,246,241,0.9);margin:0;}
+.emotional-opening .author{font-family:'Jost',sans-serif;font-size:12px;color:#D4998F;letter-spacing:1px;text-transform:uppercase;margin-top:16px;font-style:normal;}
+h2{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:#B87066;margin:48px 0 16px;}
+h3{font-family:'Playfair Display',serif;font-size:20px;color:#3D2820;margin:32px 0 12px;}
+p{font-size:16px;color:#4A3830;margin-bottom:16px;}
+.safety-box{background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.3);border-radius:16px;padding:24px 28px;margin:32px 0;}
+.safety-box .safety-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;margin-bottom:14px;display:block;}
+.safety-list{list-style:none;}
+.safety-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#4A3830;margin-bottom:10px;}
+.safety-list li::before{content:"✓";color:#6B9E82;font-weight:700;flex-shrink:0;margin-top:2px;}
+.safety-list li.warning::before{content:"⚠";color:#C9A96E;}
+.week-table{width:100%;border-collapse:collapse;margin:24px 0;}
+.week-table th{background:#1E1614;color:#D4998F;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;}
+.week-table td{padding:12px 16px;font-size:14px;color:#4A3830;border-bottom:1px solid rgba(184,112,102,0.1);}
+.week-table tr:nth-child(even) td{background:rgba(184,112,102,0.03);}
+.week-table .week-num{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#B87066;}
+.exercise-card{background:white;border:1px solid rgba(184,112,102,0.15);border-radius:20px;padding:32px;margin:24px 0;box-shadow:0 4px 20px rgba(61,40,32,0.06);}
+.exercise-card .num{font-family:'Playfair Display',serif;font-size:48px;font-style:italic;color:#D4998F;line-height:1;margin-bottom:8px;}
+.exercise-card h3{margin:0 0 12px;font-size:20px;}
+.exercise-card .duration{display:inline-block;background:rgba(107,158,130,0.1);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-top:8px;}
+.step-list{list-style:none;margin:16px 0;counter-reset:step;}
+.step-list li{display:flex;gap:16px;margin-bottom:16px;font-size:15px;color:#4A3830;counter-increment:step;}
+.step-list li::before{content:counter(step);min-width:28px;height:28px;background:#B87066;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;}
+.audio-guide{background:#F2E8DC;border-radius:16px;padding:24px 28px;margin:20px 0;}
+.audio-guide .audio-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:14px;display:block;}
+.audio-guide .script{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:#3D2820;line-height:2;}
+.tip-box{background:rgba(184,112,102,0.06);border:1px solid rgba(184,112,102,0.2);border-radius:16px;padding:20px 24px;margin:24px 0;}
+.tip-box .tip-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:8px;}
+.tip-box p{margin:0;font-size:14px;color:#6B4A3C;}
+.cta-box{background:#1E1614;border-radius:20px;padding:40px;text-align:center;margin-top:56px;}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#D4998F;margin-bottom:12px;}
+.cta-box p{color:rgba(250,246,241,0.6);font-size:14px;margin-bottom:24px;}
+.btn-primary{display:inline-block;background:#B87066;color:white;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:1px;}
+.btn-outline{display:inline-block;background:transparent;color:#D4998F;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;border:1px solid rgba(212,153,143,0.4);margin-left:12px;}
+.back{display:block;text-align:center;margin-top:24px;font-size:12px;color:#8C7068;text-decoration:none;letter-spacing:1px;text-transform:uppercase;}
+@media(max-width:600px){.content{padding:40px 20px;}.topbar{padding:14px 20px;}.btn-outline{margin-left:0;margin-top:12px;display:block;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html" class="brand">florelles.com</a>
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="showLang('it',this)">🇮🇹 IT</button>
+    <button class="lang-tab" onclick="showLang('fr',this)">🇫🇷 FR</button>
+    <button class="lang-tab" onclick="showLang('en',this)">🇬🇧 EN</button>
+  </div>
+  <span class="badge">Mini-Guide · Fase 3</span>
+</div>
+<div class="content">
+<div class="content-section active" id="lang-it">
+<div class="phase-badge">Fase 3 — Rieducazione</div>
+<h1>Desensibilizzazione<br><em>al Dolore</em></h1>
+<p class="intro">Tecniche cliniche per rieducare il sistema nervoso al dolore pelvico cronico — protocolli basati sulla neurologia del dolore per ripristinare una risposta proporzionata.</p>
+<div class="emotional-opening">
+<p>"Il dolore che senti non è una condanna. È il tuo sistema nervoso che ha imparato a proteggerti — e che ora ha bisogno di imparare che può rilassarsi. Questo non avviene in un giorno, ma avviene."</p>
+<div class="author">— Il dolore cronico è reversibile</div>
+</div>
+<h2>Prima di iniziare — Checklist di sicurezza</h2>
+<div class="safety-box">
+<span class="safety-label">✓ Condizioni ideali</span>
+<ul class="safety-list">
+<li>Hai completato Fase 1 (respiro) e Fase 2 (tocco terapeutico)</li>
+<li>Il dolore è cronico, non acuto improvviso</li>
+<li>Non hai infezioni in corso nella zona pelvica</li>
+<li>Hai a disposizione un panno caldo e uno freddo</li>
+<li class="warning">Se il dolore è aumentato nelle ultime settimane, consulta prima un medico</li>
+<li class="warning">Queste tecniche trattano il dolore neurogenico — non sostituiscono la diagnosi medica</li>
+</ul>
+</div>
+<h2>Piano settimanale progressivo</h2>
+<table class="week-table">
+<tr><th>Settimana</th><th>Tecnica</th><th>Durata</th><th>Obiettivo</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Contrasto termico — zona neutrale</td><td>10 min</td><td>Abituare i recettori</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Finestra terapeutica base</td><td>15 min</td><td>Espandere la soglia</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Contrasto termico zona pelvica</td><td>15 min</td><td>Ridurre sensibilizzazione</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Reprocessing somatico completo</td><td>20 min</td><td>Riconfigurare la risposta</td></tr>
+</table>
+<h2>Gli esercizi</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Contrasto Termico</h3>
+<p>Il contrasto caldo-freddo "confonde" i recettori del dolore, aprendo una finestra di minore sensibilità.</p>
+<ol class="step-list">
+<li>Prepara un panno caldo (confortevole) e uno freddo (borsa del ghiaccio avvolta in un asciugamano).</li>
+<li>Applica il caldo sulla zona bassa dell'addome per 3 minuti — lascia che i muscoli si rilassino.</li>
+<li>Applica il freddo per 1 minuto — nota la differenza di sensazione.</li>
+<li>Ripeti il ciclo caldo-freddo 3 volte, terminando sempre con il caldo.</li>
+<li>Dopo l'ultima applicazione calda, esegui 5 respiri 4-4-6.</li>
+</ol>
+<span class="duration">⏱ 10 minuti · Ogni giorno · Settimana 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Finestra Terapeutica</h3>
+<p>Espande gradualmente la tolleranza alla sensazione nella zona pelvica, distinguendo dolore da discomfort.</p>
+<ol class="step-list">
+<li>In posizione supina, dopo il contrasto termico, porta l'attenzione alla zona pelvica.</li>
+<li>Su una scala 0-10, identifica il tuo livello attuale di dolore/tensione.</li>
+<li>Con massaggio leggero, lavora dove il livello è 2-3 — mai sopra 4.</li>
+<li>Se il livello sale a 5, fermati e torna al respiro 4-4-6 finché non scende a 2.</li>
+<li>L'obiettivo è allargare il tempo nella "finestra" 2-4 senza che salga.</li>
+</ol>
+<span class="duration">⏱ 15 minuti · 4 volte a settimana · Settimane 2-3</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Reprocessing Somatico</h3>
+<p>Tecnica per "aggiornare" la risposta del sistema nervoso al dolore pelvico.</p>
+<ol class="step-list">
+<li>Siediti comoda, piedi a terra. Inizia con 5 respiri 4-4-6.</li>
+<li>Porta l'attenzione alla sensazione di dolore — senza fuggirla.</li>
+<li>Descrivila mentalmente: "È una pressione? Un bruciore? Ha un colore?"</li>
+<li>Nota se mentre la descrivi, la sensazione cambia — spesso si riduce quando la osserviamo con curiosità.</li>
+<li>Termina visualizzando la zona pelvica che si ammorbidisce con ogni espirazione.</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">🎙 Guida vocale</span>
+<div class="script">
+"Porto l'attenzione alla sensazione... senza giudicarla..."<br>
+"Com'è? Dove esattamente? Che forma ha?"<br>
+"Con ogni respiro... un po' di spazio intorno..."
+</div>
+</div>
+<span class="duration">⏱ 20 minuti · 3 volte a settimana · Settimana 4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Consiglio clinico</div>
+<p>Studi condotti in Francia mostrano che l'80% delle donne che hanno seguito un protocollo di desensibilizzazione progressiva per 12 settimane ha riportato una riduzione significativa del dolore nelle attività quotidiane.</p>
+</div>
+<div class="cta-box">
+<h3>Prossimo passo</h3>
+<p>La Fase 3b introduce i Kegel Modificati — esercizi per il rilascio attivo dell'ipertono muscolare.</p>
+<a href="index.html#mini" class="btn-primary">Scopri le altre Mini-Guide →</a>
+<a href="guida_rinascita_IT.html" class="btn-outline">Guida Completa</a>
+</div>
+<a href="index.html" class="back">← Torna al sito</a>
+</div>
+<div class="content-section" id="lang-fr">
+<div class="phase-badge">Phase 3 — Rééducation</div>
+<h1>Désensibilisation<br><em>à la Douleur</em></h1>
+<p class="intro">Techniques cliniques pour rééduquer le système nerveux à la douleur pelvienne chronique.</p>
+<div class="emotional-opening">
+<p>"La douleur que vous ressentez n'est pas une condamnation. C'est votre système nerveux qui a appris à vous protéger — et qui doit maintenant apprendre qu'il peut se détendre. Cela ne se passe pas en un jour, mais cela se passe."</p>
+<div class="author">— La douleur chronique est réversible</div>
+</div>
+<h2>Plan hebdomadaire progressif</h2>
+<table class="week-table">
+<tr><th>Semaine</th><th>Technique</th><th>Durée</th><th>Objectif</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Contraste thermique — zone neutre</td><td>10 min</td><td>Habituer les récepteurs</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Fenêtre thérapeutique de base</td><td>15 min</td><td>Élargir le seuil</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Contraste thermique zone pelvienne</td><td>15 min</td><td>Réduire la sensibilisation</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Retraitement somatique complet</td><td>20 min</td><td>Reconfigurer la réponse</td></tr>
+</table>
+<h2>Les exercices</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Contraste Thermique</h3>
+<ol class="step-list">
+<li>Préparez un linge chaud (confortable) et un froid (sac de glace enveloppé dans une serviette).</li>
+<li>Appliquez le chaud sur le bas-ventre pendant 3 minutes.</li>
+<li>Appliquez le froid pendant 1 minute — notez la différence de sensation.</li>
+<li>Répétez le cycle chaud-froid 3 fois, en terminant toujours par le chaud.</li>
+<li>Après la dernière application chaude, effectuez 5 respirations 4-4-6.</li>
+</ol>
+<span class="duration">⏱ 10 minutes · Chaque jour · Semaine 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Fenêtre Thérapeutique</h3>
+<ol class="step-list">
+<li>En position couchée, après le contraste thermique, portez l'attention sur la zone pelvienne.</li>
+<li>Sur une échelle 0-10, identifiez votre niveau actuel de douleur/tension.</li>
+<li>Avec un massage léger, travaillez là où le niveau est 2-3 — jamais au-dessus de 4.</li>
+<li>Si le niveau monte à 5, arrêtez et revenez à la respiration 4-4-6.</li>
+</ol>
+<span class="duration">⏱ 15 minutes · 4 fois par semaine · Semaines 2-3</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Retraitement Somatique</h3>
+<ol class="step-list">
+<li>Assise confortablement, pieds au sol. 5 respirations 4-4-6.</li>
+<li>Portez l'attention sur la sensation de douleur — sans la fuir.</li>
+<li>Décrivez-la mentalement : "Est-ce une pression ? Une brûlure ? A-t-elle une couleur ?"</li>
+<li>Notez si, en l'observant, la sensation change — elle se réduit souvent quand on l'observe avec curiosité.</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">🎙 Guide vocal</span>
+<div class="script">
+"Je porte l'attention sur la sensation... sans la juger..."<br>
+"Comment est-elle ? Où exactement ? Quelle forme a-t-elle ?"<br>
+"À chaque respiration... un peu d'espace autour..."
+</div>
+</div>
+<span class="duration">⏱ 20 minutes · 3 fois par semaine · Semaine 4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Conseil clinique</div>
+<p>Des études menées en France montrent que 80% des femmes ayant suivi un protocole de désensibilisation progressive pendant 12 semaines ont rapporté une réduction significative de la douleur.</p>
+</div>
+<div class="cta-box">
+<h3>Prochaine étape</h3>
+<p>La Phase 3b introduit les Kegel Modifiés — exercices pour le relâchement actif de l'hypertonicité.</p>
+<a href="index_fr.html#mini" class="btn-primary">Découvrir les autres Mini-Guides →</a>
+<a href="guide_renaissance_FR.html" class="btn-outline">Guide Complet</a>
+</div>
+<a href="index_fr.html" class="back">← Retour au site</a>
+</div>
+<div class="content-section" id="lang-en">
+<div class="phase-badge">Phase 3 — Re-education</div>
+<h1>Pain<br><em>Desensitisation</em></h1>
+<p class="intro">Clinical techniques to re-educate the nervous system to chronic pelvic pain — protocols based on pain neurology to restore a proportionate response.</p>
+<div class="emotional-opening">
+<p>"The pain you feel is not a sentence. It is your nervous system that has learned to protect you — and that now needs to learn it can relax. This does not happen in one day, but it does happen."</p>
+<div class="author">— Chronic pain is reversible</div>
+</div>
+<h2>Progressive weekly plan</h2>
+<table class="week-table">
+<tr><th>Week</th><th>Technique</th><th>Duration</th><th>Goal</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Thermal contrast — neutral zone</td><td>10 min</td><td>Habituate receptors</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Basic therapeutic window</td><td>15 min</td><td>Expand threshold</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Thermal contrast pelvic zone</td><td>15 min</td><td>Reduce sensitisation</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Full somatic reprocessing</td><td>20 min</td><td>Reconfigure response</td></tr>
+</table>
+<h2>The exercises</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>Thermal Contrast</h3>
+<ol class="step-list">
+<li>Prepare a warm cloth (comfortable) and a cold one (ice pack wrapped in a towel).</li>
+<li>Apply warmth to the lower abdomen for 3 minutes — allow muscles to relax.</li>
+<li>Apply cold for 1 minute — notice the difference in sensation.</li>
+<li>Repeat the warm-cold cycle 3 times, always ending with warmth.</li>
+<li>After the last warm application, perform 5 breaths of 4-4-6.</li>
+</ol>
+<span class="duration">⏱ 10 minutes · Every day · Week 1</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Therapeutic Window</h3>
+<ol class="step-list">
+<li>Supine, after thermal contrast, bring attention to the pelvic area.</li>
+<li>On a scale of 0-10, identify your current level of pain/tension.</li>
+<li>With light massage, work where the level is 2-3 — never above 4.</li>
+<li>If the level rises to 5, stop and return to 4-4-6 breathing until it drops to 2.</li>
+</ol>
+<span class="duration">⏱ 15 minutes · 4 times a week · Weeks 2-3</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Somatic Reprocessing</h3>
+<ol class="step-list">
+<li>Sit comfortably, feet on the floor. 5 breaths of 4-4-6.</li>
+<li>Bring attention to the sensation of pain — without fleeing it.</li>
+<li>Describe it mentally: "Is it pressure? Burning? Does it have a colour?"</li>
+<li>Notice if, as you describe it, the sensation changes — it often reduces when observed with curiosity.</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">🎙 Vocal guide</span>
+<div class="script">
+"I bring attention to the sensation... without judging it..."<br>
+"What is it like? Where exactly? What shape does it have?"<br>
+"With each breath... a little space around it..."
+</div>
+</div>
+<span class="duration">⏱ 20 minutes · 3 times a week · Week 4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Clinical tip</div>
+<p>Studies conducted in France show that 80% of women who followed a progressive desensitisation protocol for 12 weeks reported significant reduction in pain during daily activities.</p>
+</div>
+<div class="cta-box">
+<h3>Next step</h3>
+<p>Phase 3b introduces Modified Kegel exercises — techniques for active release of muscular hypertonia.</p>
+<a href="index_en.html#mini" class="btn-primary">Discover the other Mini-Guides →</a>
+<a href="guide_renaissance_EN.html" class="btn-outline">Complete Guide</a>
+</div>
+<a href="index_en.html" class="back">← Back to site</a>
+</div>
+</div>
+<script>
+function showLang(lang, btn) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>

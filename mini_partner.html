@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comunicazione con il Partner — Mini-Guide · florelles.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:#FAF6F1;color:#2A1A14;line-height:1.8;}
+.topbar{background:#1E1614;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.brand{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#D4998F;text-decoration:none;}
+.lang-tabs{display:flex;gap:8px;}
+.lang-tab{padding:5px 12px;border-radius:20px;border:1px solid rgba(184,112,102,0.4);background:transparent;font-size:11px;color:#D4998F;cursor:pointer;font-family:'Jost',sans-serif;}
+.lang-tab.active{background:#B87066;color:white;border-color:#B87066;}
+.badge{background:rgba(107,158,130,0.2);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);}
+.content{max-width:760px;margin:0 auto;padding:60px 40px;}
+.content-section{display:none;}
+.content-section.active{display:block;}
+.phase-badge{display:inline-block;background:rgba(107,158,130,0.12);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:6px 16px;border-radius:20px;border:1px solid rgba(107,158,130,0.3);margin-bottom:24px;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,48px);font-weight:400;color:#1E1614;margin-bottom:16px;line-height:1.15;}
+h1 em{font-style:italic;color:#B87066;}
+.intro{font-size:17px;color:#6B4A3C;margin-bottom:32px;line-height:1.75;max-width:620px;}
+.emotional-opening{background:linear-gradient(135deg,#3D2820,#2C1D18);border-radius:20px;padding:36px 40px;margin:32px 0 48px;}
+.emotional-opening p{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;line-height:1.8;color:rgba(250,246,241,0.9);margin:0;}
+.emotional-opening .author{font-family:'Jost',sans-serif;font-size:12px;color:#D4998F;letter-spacing:1px;text-transform:uppercase;margin-top:16px;font-style:normal;}
+h2{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:#B87066;margin:48px 0 16px;}
+h3{font-family:'Playfair Display',serif;font-size:20px;color:#3D2820;margin:32px 0 12px;}
+p{font-size:16px;color:#4A3830;margin-bottom:16px;}
+.safety-box{background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.3);border-radius:16px;padding:24px 28px;margin:32px 0;}
+.safety-box .safety-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#C9A96E;margin-bottom:14px;display:block;}
+.safety-list{list-style:none;}
+.safety-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:#4A3830;margin-bottom:10px;}
+.safety-list li::before{content:"✓";color:#6B9E82;font-weight:700;flex-shrink:0;margin-top:2px;}
+.safety-list li.warning::before{content:"⚠";color:#C9A96E;}
+.week-table{width:100%;border-collapse:collapse;margin:24px 0;}
+.week-table th{background:#1E1614;color:#D4998F;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-align:left;}
+.week-table td{padding:12px 16px;font-size:14px;color:#4A3830;border-bottom:1px solid rgba(184,112,102,0.1);}
+.week-table tr:nth-child(even) td{background:rgba(184,112,102,0.03);}
+.week-table .week-num{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#B87066;}
+.exercise-card{background:white;border:1px solid rgba(184,112,102,0.15);border-radius:20px;padding:32px;margin:24px 0;box-shadow:0 4px 20px rgba(61,40,32,0.06);}
+.exercise-card .num{font-family:'Playfair Display',serif;font-size:48px;font-style:italic;color:#D4998F;line-height:1;margin-bottom:8px;}
+.exercise-card h3{margin:0 0 12px;font-size:20px;}
+.exercise-card .duration{display:inline-block;background:rgba(107,158,130,0.1);color:#6B9E82;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-top:8px;}
+.step-list{list-style:none;margin:16px 0;counter-reset:step;}
+.step-list li{display:flex;gap:16px;margin-bottom:16px;font-size:15px;color:#4A3830;counter-increment:step;}
+.step-list li::before{content:counter(step);min-width:28px;height:28px;background:#B87066;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;}
+.audio-guide{background:#F2E8DC;border-radius:16px;padding:24px 28px;margin:20px 0;}
+.audio-guide .audio-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:14px;display:block;}
+.audio-guide .script{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:#3D2820;line-height:2;}
+.tip-box{background:rgba(184,112,102,0.06);border:1px solid rgba(184,112,102,0.2);border-radius:16px;padding:20px 24px;margin:24px 0;}
+.tip-box .tip-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B87066;margin-bottom:8px;}
+.tip-box p{margin:0;font-size:14px;color:#6B4A3C;}
+.cta-box{background:#1E1614;border-radius:20px;padding:40px;text-align:center;margin-top:56px;}
+.cta-box h3{font-family:'Playfair Display',serif;font-size:22px;font-style:italic;color:#D4998F;margin-bottom:12px;}
+.cta-box p{color:rgba(250,246,241,0.6);font-size:14px;margin-bottom:24px;}
+.btn-primary{display:inline-block;background:#B87066;color:white;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:1px;}
+.btn-outline{display:inline-block;background:transparent;color:#D4998F;text-decoration:none;padding:14px 36px;border-radius:50px;font-size:14px;border:1px solid rgba(212,153,143,0.4);margin-left:12px;}
+.back{display:block;text-align:center;margin-top:24px;font-size:12px;color:#8C7068;text-decoration:none;letter-spacing:1px;text-transform:uppercase;}
+@media(max-width:600px){.content{padding:40px 20px;}.topbar{padding:14px 20px;}.btn-outline{margin-left:0;margin-top:12px;display:block;}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a href="index.html" class="brand">florelles.com</a>
+  <div class="lang-tabs">
+    <button class="lang-tab active" onclick="showLang('it',this)">🇮🇹 IT</button>
+    <button class="lang-tab" onclick="showLang('fr',this)">🇫🇷 FR</button>
+    <button class="lang-tab" onclick="showLang('en',this)">🇬🇧 EN</button>
+  </div>
+  <span class="badge">Mini-Guide · Avanzato</span>
+</div>
+<div class="content">
+<div class="content-section active" id="lang-it">
+<div class="phase-badge">Livello Avanzato — Relazione</div>
+<h1>Comunicazione<br><em>con il Partner</em></h1>
+<p class="intro">Strumenti pratici per esprimere i propri bisogni, costruire intimità graduale e creare protocolli di comunicazione che rendano l'intimità sicura e piacevole per entrambi.</p>
+<div class="emotional-opening">
+<p>"Parlare di dolore, di paura e di desiderio con il proprio partner è uno degli atti di coraggio più grandi. Non perché sia difficile — ma perché richiede di fidarsi di qualcuno con la parte più vulnerabile di sé. E quella fiducia, costruita lentamente, diventa la base del piacere."</p>
+<div class="author">— La comunicazione è il miglior afrodisiaco</div>
+</div>
+<h2>Prima di questa guida</h2>
+<div class="safety-box">
+<span class="safety-label">✓ Questa guida è pensata per chi</span>
+<ul class="safety-list">
+<li>Ha completato almeno le Fasi 1-3 del percorso individuale</li>
+<li>Ha un partner con cui desidera costruire intimità progressiva</li>
+<li>Si sente emotivamente pronta a condividere il proprio percorso</li>
+<li class="warning">Questa guida NON è adatta in contesti di relazioni non sicure o coercitive</li>
+<li class="warning">Il ritmo è sempre tuo — nessun esercizio richiede di fare nulla che non vuoi</li>
+</ul>
+</div>
+<h2>Piano progressivo — 4 settimane</h2>
+<table class="week-table">
+<tr><th>Settimana</th><th>Focus</th><th>Strumento</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Apertura del dialogo</td><td>Conversazione guidata</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Linguaggio del corpo e dei limiti</td><td>Protocollo semaforo</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Intimità non sessuale</td><td>Esercizi di contatto graduale</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Integrazione e negoziazione continua</td><td>Debriefing post-intimità</td></tr>
+</table>
+<h2>Gli strumenti</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>La Prima Conversazione</h3>
+<p>Come iniziare a parlare della propria storia con il partner, senza sentirsi obbligate a spiegare tutto subito.</p>
+<ol class="step-list">
+<li>Scegli un momento di calma, non durante o immediatamente prima dell'intimità.</li>
+<li>Inizia con: "Voglio condividere qualcosa di importante su di me e su come mi sento nel mio corpo."</li>
+<li>Condividi solo ciò che ti senti pronta a condividere — non è necessario raccontare tutto al primo incontro.</li>
+<li>Chiedi al partner di ascoltare senza interrompere e senza proporre soluzioni immediate.</li>
+<li>Termina con: "Quello di cui ho bisogno da te è [specificare]."</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">💬 Frasi utili per iniziare</span>
+<div class="script">
+"Ho un percorso fisico che sto facendo e mi aiuterebbe..."<br>
+"Quando sento dolore, ho bisogno che tu..."<br>
+"La cosa più importante per me in questo momento è..."<br>
+"Se mi fermo, non significa che non voglio — significa che ho bisogno di..."
+</div>
+</div>
+<span class="duration">📅 Una volta · Settimana 1 · Quando ti senti pronta</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Il Protocollo Semaforo</h3>
+<p>Un sistema semplice e chiaro per comunicare in tempo reale durante l'intimità — senza dover interrompere il momento con lunghe spiegazioni.</p>
+<ol class="step-list">
+<li><strong style="color:#6B9E82;">Verde</strong> = "Sto bene, possiamo continuare" — una parola concordata o un segnale fisico.</li>
+<li><strong style="color:#C9A96E;">Giallo</strong> = "Rallentiamo, ho bisogno di un momento" — il partner si ferma e aspetta.</li>
+<li><strong style="color:#B87066;">Rosso</strong> = "Stop, ho bisogno di fermarmi" — l'intimità si interrompe senza domande.</li>
+<li>Concordate i segnali prima dell'intimità — anche parole, gesti o pressioni della mano.</li>
+<li>Dopo ogni sessione di intimità, dedicate 5 minuti a un "debriefing" leggero: cosa ha funzionato, cosa no.</li>
+</ol>
+<span class="duration">📅 Da usare ogni volta · Settimane 2-4</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Intimità Non Sessuale Graduale</h3>
+<p>Costruire intimità fisica sicura che non sia necessariamente sessuale — fondamentale per creare fiducia corporea con il partner.</p>
+<ol class="step-list">
+<li>Inizia con il contatto più sicuro: tenere la mano, abbracci, dormire abbracciati.</li>
+<li>Gradualmente, nel tempo, introduci massaggi senza obiettivo sessuale — schiena, piedi, mani.</li>
+<li>Pratica il "massaggio del consenso": ogni 5 minuti, il partner chiede "Va bene così?" e aspetta risposta.</li>
+<li>Non accelerare verso l'intimità sessuale finché il contatto non-sessuale non è completamente confortevole.</li>
+</ol>
+<span class="duration">📅 Progressivo · Settimane 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Per il partner</div>
+<p>Se sei il partner di chi usa questa guida: il tuo ruolo più importante è la pazienza. Non chiedere quanto ci vorrà, non suggerire di "provare comunque". La fiducia si costruisce con la costanza, non con la pressione.</p>
+</div>
+<div class="cta-box">
+<h3>Avete un percorso davanti a voi</h3>
+<p>La comunicazione aperta è il fondamento di ogni intimità soddisfacente. Continuate a praticarla — ogni giorno, non solo nei momenti di difficoltà.</p>
+<a href="index.html#mini" class="btn-primary">Esplora le altre Mini-Guide →</a>
+<a href="guida_rinascita_IT.html" class="btn-outline">Guida Completa</a>
+</div>
+<a href="index.html" class="back">← Torna al sito</a>
+</div>
+<div class="content-section" id="lang-fr">
+<div class="phase-badge">Niveau Avancé — Relation</div>
+<h1>Communication<br><em>avec le Partenaire</em></h1>
+<p class="intro">Outils pratiques pour exprimer ses besoins, construire une intimité progressive et créer des protocoles de communication qui rendent l'intimité sûre et agréable pour les deux.</p>
+<div class="emotional-opening">
+<p>"Parler de douleur, de peur et de désir avec son partenaire est l'un des actes de courage les plus grands. Pas parce que c'est difficile — mais parce que cela demande de faire confiance à quelqu'un avec la partie la plus vulnérable de soi."</p>
+<div class="author">— La communication est le meilleur aphrodisiaque</div>
+</div>
+<h2>Plan progressif — 4 semaines</h2>
+<table class="week-table">
+<tr><th>Semaine</th><th>Focus</th><th>Outil</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Ouverture du dialogue</td><td>Conversation guidée</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Langage du corps et des limites</td><td>Protocole feu tricolore</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Intimité non sexuelle</td><td>Exercices de contact progressif</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Intégration et négociation continue</td><td>Débriefing post-intimité</td></tr>
+</table>
+<h2>Les outils</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>La Première Conversation</h3>
+<ol class="step-list">
+<li>Choisissez un moment calme, pas pendant ou juste avant l'intimité.</li>
+<li>Commencez par : "Je veux partager quelque chose d'important sur moi et sur comment je me sens dans mon corps."</li>
+<li>Partagez seulement ce que vous vous sentez prête à partager.</li>
+<li>Demandez au partenaire d'écouter sans interrompre.</li>
+<li>Terminez par : "Ce dont j'ai besoin de toi est [préciser]."</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">💬 Phrases utiles pour commencer</span>
+<div class="script">
+"J'ai un parcours physique que je fais et il m'aiderait que tu..."<br>
+"Quand je ressens de la douleur, j'ai besoin que tu..."<br>
+"Si je m'arrête, ça ne veut pas dire que je ne veux pas — ça veut dire que..."
+</div>
+</div>
+<span class="duration">📅 Une fois · Semaine 1 · Quand vous vous sentez prête</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>Le Protocole Feu Tricolore</h3>
+<ol class="step-list">
+<li><strong style="color:#6B9E82;">Vert</strong> = "Je vais bien, nous pouvons continuer."</li>
+<li><strong style="color:#C9A96E;">Jaune</strong> = "Ralentissons, j'ai besoin d'un moment."</li>
+<li><strong style="color:#B87066;">Rouge</strong> = "Stop, j'ai besoin de m'arrêter" — sans questions.</li>
+<li>Convenez des signaux avant l'intimité — mots, gestes ou pressions de la main.</li>
+<li>Après chaque session, consacrez 5 minutes à un débriefing léger.</li>
+</ol>
+<span class="duration">📅 À utiliser à chaque fois · Semaines 2-4</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Intimité Non Sexuelle Progressive</h3>
+<ol class="step-list">
+<li>Commencez par le contact le plus sûr : tenir la main, câlins, dormir enlacés.</li>
+<li>Introduisez progressivement des massages sans objectif sexuel.</li>
+<li>Pratiquez le "massage du consentement" : toutes les 5 minutes, le partenaire demande "C'est bon ainsi ?"</li>
+<li>N'accélérez pas vers l'intimité sexuelle tant que le contact non sexuel n'est pas complètement confortable.</li>
+</ol>
+<span class="duration">📅 Progressif · Semaines 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 Pour le partenaire</div>
+<p>Si vous êtes le partenaire de celle qui utilise ce guide : votre rôle le plus important est la patience. Ne demandez pas combien de temps cela prendra, ne suggérez pas d'"essayer quand même". La confiance se construit avec la constance.</p>
+</div>
+<div class="cta-box">
+<h3>Vous avez un chemin devant vous</h3>
+<p>La communication ouverte est le fondement de toute intimité satisfaisante.</p>
+<a href="index_fr.html#mini" class="btn-primary">Explorer les autres Mini-Guides →</a>
+<a href="guide_renaissance_FR.html" class="btn-outline">Guide Complet</a>
+</div>
+<a href="index_fr.html" class="back">← Retour au site</a>
+</div>
+<div class="content-section" id="lang-en">
+<div class="phase-badge">Advanced — Relationship</div>
+<h1>Partner<br><em>Communication</em></h1>
+<p class="intro">Practical tools for expressing your needs, building gradual intimacy and creating communication protocols that make intimacy safe and enjoyable for both of you.</p>
+<div class="emotional-opening">
+<p>"Speaking about pain, fear and desire with your partner is one of the greatest acts of courage. Not because it is difficult — but because it requires trusting someone with the most vulnerable part of yourself. And that trust, built slowly, becomes the foundation of pleasure."</p>
+<div class="author">— Communication is the best aphrodisiac</div>
+</div>
+<h2>Progressive plan — 4 weeks</h2>
+<table class="week-table">
+<tr><th>Week</th><th>Focus</th><th>Tool</th></tr>
+<tr><td><span class="week-num">1</span></td><td>Opening the dialogue</td><td>Guided conversation</td></tr>
+<tr><td><span class="week-num">2</span></td><td>Body language and boundaries</td><td>Traffic light protocol</td></tr>
+<tr><td><span class="week-num">3</span></td><td>Non-sexual intimacy</td><td>Gradual contact exercises</td></tr>
+<tr><td><span class="week-num">4</span></td><td>Integration and ongoing negotiation</td><td>Post-intimacy debrief</td></tr>
+</table>
+<h2>The tools</h2>
+<div class="exercise-card">
+<div class="num">01</div>
+<h3>The First Conversation</h3>
+<ol class="step-list">
+<li>Choose a calm moment, not during or immediately before intimacy.</li>
+<li>Begin with: "I want to share something important about myself and how I feel in my body."</li>
+<li>Share only what you feel ready to share.</li>
+<li>Ask your partner to listen without interrupting or immediately suggesting solutions.</li>
+<li>End with: "What I need from you is [specify]."</li>
+</ol>
+<div class="audio-guide">
+<span class="audio-label">💬 Useful phrases to start</span>
+<div class="script">
+"I have a physical journey I am going through and it would help if you..."<br>
+"When I feel pain, I need you to..."<br>
+"If I stop, it doesn't mean I don't want to — it means I need..."
+</div>
+</div>
+<span class="duration">📅 Once · Week 1 · When you feel ready</span>
+</div>
+<div class="exercise-card">
+<div class="num">02</div>
+<h3>The Traffic Light Protocol</h3>
+<ol class="step-list">
+<li><strong style="color:#6B9E82;">Green</strong> = "I am fine, we can continue."</li>
+<li><strong style="color:#C9A96E;">Amber</strong> = "Let's slow down, I need a moment."</li>
+<li><strong style="color:#B87066;">Red</strong> = "Stop, I need to pause" — no questions asked.</li>
+<li>Agree on signals before intimacy — words, gestures or hand pressure.</li>
+<li>After each session, spend 5 minutes on a light debrief.</li>
+</ol>
+<span class="duration">📅 Use every time · Weeks 2-4</span>
+</div>
+<div class="exercise-card">
+<div class="num">03</div>
+<h3>Gradual Non-Sexual Intimacy</h3>
+<ol class="step-list">
+<li>Begin with the safest contact: holding hands, hugs, sleeping embraced.</li>
+<li>Gradually introduce non-sexual massages — back, feet, hands.</li>
+<li>Practise "consent massage": every 5 minutes, the partner asks "Is this okay?" and waits for an answer.</li>
+<li>Do not accelerate toward sexual intimacy until non-sexual contact is completely comfortable.</li>
+</ol>
+<span class="duration">📅 Progressive · Weeks 3-4</span>
+</div>
+<div class="tip-box">
+<div class="tip-label">💡 For the partner</div>
+<p>If you are the partner of someone using this guide: your most important role is patience. Do not ask how long it will take, do not suggest "trying anyway". Trust is built with consistency, not pressure.</p>
+</div>
+<div class="cta-box">
+<h3>You have a journey ahead of you</h3>
+<p>Open communication is the foundation of every satisfying intimacy. Keep practising it — every day, not just in moments of difficulty.</p>
+<a href="index_en.html#mini" class="btn-primary">Explore the other Mini-Guides →</a>
+<a href="guide_renaissance_EN.html" class="btn-outline">Complete Guide</a>
+</div>
+<a href="index_en.html" class="back">← Back to site</a>
+</div>
+</div>
+<script>
+function showLang(lang, btn) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
