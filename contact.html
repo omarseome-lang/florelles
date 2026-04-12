@@ -84,15 +84,15 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:40p
         <button class="btn-primary" onclick="sendEmail('it')">Invia messaggio →</button>
       </div>
       <div class="contact-info">
-        <div class="info-card"><div class="icon">✉️</div><h3>Email generale</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a></p></div>
-        <div class="info-card"><div class="icon">🔒</div><h3>Privacy</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a><br>Per richieste GDPR e cancellazione dati</p></div>
+        <div class="info-card"><div class="icon">✉️</div><h3>Email generale</h3><p><a href="mailto:contact@florelles.com">contact&#64;florelles.com</a></p></div>
+        <div class="info-card"><div class="icon">🔒</div><h3>Privacy</h3><p><a href="mailto:contact@florelles.com">contact&#64;florelles.com</a><br>Per richieste GDPR e cancellazione dati</p></div>
         <div class="info-card"><div class="icon">🌍</div><h3>Lingue</h3><p>Rispondiamo in Italiano, Français e English</p></div>
         <div class="info-card"><div class="icon">⏱</div><h3>Tempi di risposta</h3><p>24–48 ore nei giorni lavorativi</p></div>
       </div>
     </div>
     <div class="ngo-box">
       <h3>Sei un'organizzazione o ONG?</h3>
-      <p>Offriamo tariffe speciali per associazioni, centri di supporto e operatori sanitari che lavorano con donne che hanno subito la MGF. Scrivici a <a href="mailto:contact@florelles.com">contact@florelles.com</a> per discutere una collaborazione.</p>
+      <p>Offriamo tariffe speciali per associazioni, centri di supporto e operatori sanitari che lavorano con donne che hanno subito questa esperienza. Scrivici a <a href="mailto:contact@florelles.com">contact&#64;florelles.com</a> per discutere una collaborazione.</p>
     </div>
   </div>
 
@@ -117,15 +117,15 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:40p
         <button class="btn-primary" onclick="sendEmail('fr')">Envoyer le message →</button>
       </div>
       <div class="contact-info">
-        <div class="info-card"><div class="icon">✉️</div><h3>Email général</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a></p></div>
-        <div class="info-card"><div class="icon">🔒</div><h3>Confidentialité</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a></p></div>
+        <div class="info-card"><div class="icon">✉️</div><h3>Email général</h3><p><a href="mailto:contact@florelles.com">contact&#64;florelles.com</a></p></div>
+        <div class="info-card"><div class="icon">🔒</div><h3>Confidentialité</h3><p><a href="mailto:contact@florelles.com">contact&#64;florelles.com</a></p></div>
         <div class="info-card"><div class="icon">🌍</div><h3>Langues</h3><p>Nous répondons en Français, Italiano et English</p></div>
         <div class="info-card"><div class="icon">⏱</div><h3>Délai de réponse</h3><p>24–48 heures les jours ouvrables</p></div>
       </div>
     </div>
     <div class="ngo-box">
       <h3>Vous êtes une organisation ou ONG ?</h3>
-      <p>Nous offrons des tarifs spéciaux pour les associations et les centres de soutien. Écrivez-nous à <a href="mailto:contact@florelles.com">contact@florelles.com</a>.</p>
+      <p>Nous offrons des tarifs spéciaux pour les associations et les centres de soutien. Écrivez-nous à <a href="mailto:contact@florelles.com">contact&#64;florelles.com</a>.</p>
     </div>
   </div>
 
@@ -146,45 +146,4 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:40p
             <option>Other</option>
           </select>
         </div>
-        <div style="margin-bottom:24px;"><label class="field-label">Message</label><textarea class="field" placeholder="Write us everything you need..."></textarea></div>
-        <button class="btn-primary" onclick="sendEmail('en')">Send message →</button>
-      </div>
-      <div class="contact-info">
-        <div class="info-card"><div class="icon">✉️</div><h3>General email</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a></p></div>
-        <div class="info-card"><div class="icon">🔒</div><h3>Privacy</h3><p><a href="mailto:contact@florelles.com">contact@florelles.com</a></p></div>
-        <div class="info-card"><div class="icon">🌍</div><h3>Languages</h3><p>We respond in English, Italiano and Français</p></div>
-        <div class="info-card"><div class="icon">⏱</div><h3>Response time</h3><p>24–48 hours on working days</p></div>
-      </div>
-    </div>
-    <div class="ngo-box">
-      <h3>Are you an organisation or NGO?</h3>
-      <p>We offer special rates for associations and support centres working with women who have experienced FGM. Write to us at <a href="mailto:contact@florelles.com">contact@florelles.com</a>.</p>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <div class="footer-logo">florelles.com</div>
-  <div class="footer-note">© 2026 florelles.com · Tutti i diritti riservati · contact@florelles.com</div>
-</footer>
-
-<script>
-function showLang(lang, btn) {
-  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
-  document.getElementById('lang-' + lang).classList.add('active');
-  btn.classList.add('active');
-}
-
-function sendEmail(lang) {
-  const subjects = {
-    it: 'Messaggio dal sito florelles.com',
-    fr: 'Message depuis florelles.com',
-    en: 'Message from florelles.com'
-  };
-  window.open('mailto:contact@florelles.com?subject=' + encodeURIComponent(subjects[lang]));
-}
-</script>
-</body>
-</html>
+        <div style="margin-bottom:24px;"><lab
