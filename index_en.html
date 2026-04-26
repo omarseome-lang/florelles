@@ -123,7 +123,39 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .reveal.visible{opacity:1;transform:none;}
 @keyframes fadeUp{from{opacity:1;transform:none;}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+@media(max-width:900px){
+  nav{padding:16px 24px;}
+  section{padding:70px 24px;}
+  #hero{padding:80px 20px 50px;}
+  .about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}
+  #trust{gap:32px;padding:32px 24px;}
+  footer{padding:40px 24px;flex-direction:column;text-align:center;}
+  .footer-links{flex-wrap:wrap;justify-content:center;}
+}
+@media(max-width:600px){
+  nav{padding:12px 16px;flex-wrap:wrap;gap:8px;}
+  .nav-logo{font-size:17px;}
+  #hero{padding:60px 16px 40px;}
+  #hero h1{font-size:32px;line-height:1.15;}
+  #hero p{font-size:14px;}
+  .hero-badge{font-size:10px;padding:5px 12px;letter-spacing:1px;}
+  section{padding:48px 16px;}
+  h2{font-size:24px;}
+  h3{font-size:17px;}
+  p{font-size:14px;}
+  .about-card,.guide-card,.mini-card,.phase-card{padding:20px 16px;}
+  .price-block{padding:24px 16px;}
+  .price-new{font-size:48px;}
+  .btn-primary,.btn-outline{padding:14px 24px;font-size:13px;width:100%;display:block;text-align:center;}
+  .trust-row,.trust-grid{flex-direction:column;gap:10px;}
+  .trust-label{font-size:11px;}
+  .faq-q{font-size:13px;padding:14px 0;}
+  .faq-a{font-size:13px;}
+  footer{padding:28px 16px;}
+  .footer-note{font-size:11px;}
+  .lang-tabs{gap:6px;}
+  .lang-tab{padding:5px 10px;font-size:11px;}
+}
 </style>
 </head>
 <body style="background:#1E1614;color:#FAF6F1;">
@@ -231,13 +263,13 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
         <li style="font-size:14px;color:rgba(250,246,241,0.7);margin-bottom:10px;">✓ &nbsp;Vocal guides, practice journals, safety checklists</li>
         <li style="font-size:14px;color:rgba(250,246,241,0.7);">✓ &nbsp;</li>
       </ul>
-      <a href="bundle_completo.html" style="display:inline-block;background:#C9A96E;color:#1E1614;text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:1px;">Discover the Complete Bundle →</a>
+      <a href="https://payhip.com/b/bqmdX" style="display:inline-block;background:#C9A96E;color:#1E1614;text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:1px;">Discover the Complete Bundle →</a>
     </div>
     <div style="background:rgba(250,246,241,0.03);border:1px solid rgba(201,169,110,0.2);border-radius:24px;padding:32px;text-align:center;">
       <div style="font-size:13px;color:rgba(250,246,241,0.35);text-decoration:line-through;margin-bottom:8px;">Total value: €34.70</div>
       <div style="font-family:'Playfair Display',serif;font-size:72px;color:#C9A96E;line-height:1;"><sup style="font-size:32px;vertical-align:top;margin-top:14px;">€</sup>19.90</div>
       <div style="display:inline-block;background:rgba(107,158,130,0.15);color:#6B9E82;font-size:12px;font-weight:600;letter-spacing:1px;padding:4px 14px;border-radius:20px;margin:12px 0 24px;">Save €14.80</div>
-      <button onclick="window.open('bundle_completo.html','_self')" style="display:block;width:100%;background:#B87066;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;margin-top:8px;">Buy now →</button>
+      <button onclick="window.open('https://payhip.com/b/bqmdX','_blank')" style="display:block;width:100%;background:#B87066;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;margin-top:8px;">Buy now →</button>
     </div>
   </div>
 </section>
@@ -341,7 +373,7 @@ Email: ' + (email || 'non fornita'));
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Does this guide replace a doctor? <span class="ico">+</span></div><div class="faq-a">No. The guide is a tool for self-care and support, not medical treatment. We always encourage you to consult a specialist.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Is my data secure? <span class="ico">+</span></div><div class="faq-a">Absolutely. We do not collect medical or sensitive data. Registration only requires name, email and preferred language. Payments are handled by Stripe and PayPal.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">How do I receive the guide after purchase? <span class="ico">+</span></div><div class="faq-a">Immediately after payment you receive a direct download link by email. The guide is in HTML format — readable on any device.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases or partnerships with support centres, write to us at <a href="/cdn-cgi/l/email-protection#c9aaa6a7bda8aabd89afa5a6bbaca5a5acbae7aaa6a4"><span class="__cf_email__" data-cfemail="04676b6a706567704462686b7661686861772a676b69">[email&#160;protected]</span></a>. We offer special rates for NGOs and charities.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Can I buy the guides for an organisation? <span class="ico">+</span></div><div class="faq-a">Yes. For bulk purchases or partnerships with support centres, write to us at <a href="mailto:contact@florelles.com">contact&#64;florelles.com</a>. We offer special rates for NGOs and charities.</div></div>
   </div>
 </section>
 
@@ -380,7 +412,7 @@ Email: ' + (email || 'non fornita'));
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const miniLinks = {
   'Respiro & Pavimento Pelvico': 'https://payhip.com/b/lOhxu',
   'Tocco Consapevole & Mappatura': 'https://payhip.com/b/FT41f',
@@ -398,17 +430,17 @@ const miniLinks = {
   'Breathing & Pelvic Floor': 'https://payhip.com/b/lOhxu',
   'Conscious Touch & Mapping': 'https://payhip.com/b/FT41f',
   'Pain Desensitisation': 'https://payhip.com/b/qp5XT',
-  'Modified Kegel & Active Release': 'hhttps://payhip.com/b/ezawr',
+  'Modified Kegel & Active Release': 'https://payhip.com/b/ezawr',
   'Reconnecting with Pleasure': 'https://payhip.com/b/pCGTY',
   'Partner Communication': 'https://payhip.com/b/1MRmS',
 };
 const stripeLinks = {
- 'Rinascita del Piacere': 'https://payhip.com/b/g4O9c',
+  'Rinascita del Piacere': 'https://payhip.com/b/g4O9c',
   'Renaissance du Plaisir': 'https://payhip.com/b/6gnSY',
   'Renaissance of Pleasure': 'https://payhip.com/b/cE0D1',
-  'Bundle 3 Langues': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04',
-  'Bundle 3 Languages': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04',
-  'Bundle 3 Lingue': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04'
+  'Bundle 3 Langues': 'https://payhip.com/b/bqmdX',
+  'Bundle 3 Languages': 'https://payhip.com/b/bqmdX',
+  'Bundle 3 Lingue': 'https://payhip.com/b/bqmdX'
 };
 function openModal(t,d,p,f){document.getElementById('modal-title').textContent=t;document.getElementById('modal-desc').textContent=d;document.getElementById('modal-price').textContent=p;document.getElementById('modal').classList.add('open');}
 function closeModal(){document.getElementById('modal').classList.remove('open');}
@@ -420,6 +452,3 @@ function openMini(title) {
 }
 function handlePayment(method){
   const title=document.getElementById('modal-title').textContent
-  </script>
-</body>
-</html>
