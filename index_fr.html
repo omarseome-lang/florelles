@@ -123,7 +123,39 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 .reveal.visible{opacity:1;transform:none;}
 @keyframes fadeUp{from{opacity:1;transform:none;}to{opacity:1;transform:translateY(0);}}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-@media(max-width:900px){nav{padding:16px 24px;}section{padding:70px 24px;}#hero{padding:100px 24px 60px;}.about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}#trust{gap:32px;padding:32px 24px;}footer{padding:40px 24px;flex-direction:column;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+@media(max-width:900px){
+  nav{padding:16px 24px;}
+  section{padding:70px 24px;}
+  #hero{padding:80px 20px 50px;}
+  .about-grid,.guide-grid,.test-grid,.form-row{grid-template-columns:1fr;}
+  #trust{gap:32px;padding:32px 24px;}
+  footer{padding:40px 24px;flex-direction:column;text-align:center;}
+  .footer-links{flex-wrap:wrap;justify-content:center;}
+}
+@media(max-width:600px){
+  nav{padding:12px 16px;flex-wrap:wrap;gap:8px;}
+  .nav-logo{font-size:17px;}
+  #hero{padding:60px 16px 40px;}
+  #hero h1{font-size:32px;line-height:1.15;}
+  #hero p{font-size:14px;}
+  .hero-badge{font-size:10px;padding:5px 12px;letter-spacing:1px;}
+  section{padding:48px 16px;}
+  h2{font-size:24px;}
+  h3{font-size:17px;}
+  p{font-size:14px;}
+  .about-card,.guide-card,.mini-card,.phase-card{padding:20px 16px;}
+  .price-block{padding:24px 16px;}
+  .price-new{font-size:48px;}
+  .btn-primary,.btn-outline{padding:14px 24px;font-size:13px;width:100%;display:block;text-align:center;}
+  .trust-row,.trust-grid{flex-direction:column;gap:10px;}
+  .trust-label{font-size:11px;}
+  .faq-q{font-size:13px;padding:14px 0;}
+  .faq-a{font-size:13px;}
+  footer{padding:28px 16px;}
+  .footer-note{font-size:11px;}
+  .lang-tabs{gap:6px;}
+  .lang-tab{padding:5px 10px;font-size:11px;}
+}
 </style>
 </head>
 <body style="background:#1E1614;color:#FAF6F1;">
@@ -231,13 +263,13 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
         <li style="font-size:14px;color:rgba(250,246,241,0.7);margin-bottom:10px;">✓ &nbsp;Guides vocaux, journaux de pratique, checklists de sécurité</li>
         <li style="font-size:14px;color:rgba(250,246,241,0.7);">✓ &nbsp;</li>
       </ul>
-      <a href="bundle_completo.html" style="display:inline-block;background:#C9A96E;color:#1E1614;text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:1px;">Découvrir le Bundle Complet →</a>
+      <a href="https://payhip.com/b/bqmdX" style="display:inline-block;background:#C9A96E;color:#1E1614;text-decoration:none;padding:16px 36px;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:1px;">Découvrir le Bundle Complet →</a>
     </div>
     <div style="background:rgba(250,246,241,0.03);border:1px solid rgba(201,169,110,0.2);border-radius:24px;padding:32px;text-align:center;">
       <div style="font-size:13px;color:rgba(250,246,241,0.35);text-decoration:line-through;margin-bottom:8px;">Valeur totale : €34,70</div>
       <div style="font-family:'Playfair Display',serif;font-size:72px;color:#C9A96E;line-height:1;"><sup style="font-size:32px;vertical-align:top;margin-top:14px;">€</sup>19,90</div>
       <div style="display:inline-block;background:rgba(107,158,130,0.15);color:#6B9E82;font-size:12px;font-weight:600;letter-spacing:1px;padding:4px 14px;border-radius:20px;margin:12px 0 24px;">Économisez €14,80</div>
-      <button onclick="window.open('bundle_completo.html','_self')" style="display:block;width:100%;background:#B87066;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;margin-top:8px;">Acheter maintenant →</button>
+      <button onclick="window.open('https://payhip.com/b/bqmdX','_blank')" style="display:block;width:100%;background:#B87066;color:white;border:none;padding:14px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;margin-top:8px;">Acheter maintenant →</button>
     </div>
   </div>
 </section>
@@ -248,17 +280,17 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
   <p class="section-intro reveal">Modules courts et ciblés sur une seule technique. Parfaits pour aller plus loin sur un aspect spécifique du parcours.</p>
   <div class="mini-grid">
     <div class="mini-card reveal"><div class="mini-icon" style="cursor:pointer" onclick="openMini(this.closest('.mini-card').querySelector('h4').textContent)">🌬️</div><div class="mini-body"><h4>Respiration & Plancher Pelvien</h4><p>Guide approfondie sur les techniques de respiration diaphragmatique et la coordination avec la relaxation pelvienne.</p><div class="mini-meta"><span class="mini-tag">Phase 1</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/lOhxu','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05','_blank')">Acheter →</button></div></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🤲</div><div class="mini-body"><h4>Toucher Conscient & Cartographie</h4><p>Techniques d'auto-exploration, approches du tissu cicatriciel et instructions détaillées de soin des tissus.</p><div class="mini-meta"><span class="mini-tag">Phase 2</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/FT41f','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06','_blank')">Acheter →</button></div></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">⚡</div><div class="mini-body"><h4>Désensibilisation à la Douleur</h4><p>Parcours approfondi pour la zone de confort, contraste thermique et techniques de reprocessing corporel.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/qp5XT','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07','_blank')">Acheter →</button></div></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">🌊</div><div class="mini-body"><h4>Kegel Modifiés & Relâchement Actif</h4><p>Programme complet d'exercices pour le plancher pelvien avec focus sur le relâchement actif de l'hypertonicité.</p><div class="mini-meta"><span class="mini-tag">Phase 3</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/ezawr','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08','_blank')">Acheter →</button></div></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">✨</div><div class="mini-body"><h4>Reconnexion au Plaisir</h4><p>Pratiques d'exploration autonome et intégration du plaisir dans le quotidien.</p><div class="mini-meta"><span class="mini-tag">Phase 4</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/pCGTY','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09','_blank')">Acheter →</button></div></div></div></div>
     <div class="mini-card reveal"><div class="mini-icon">💬</div><div class="mini-body"><h4>Communication avec le Partenaire</h4><p>Outils pratiques pour exprimer ses besoins et construire une intimité progressive et sécurisante.</p><div class="mini-meta"><span class="mini-tag">Avancé</span><span class="mini-price">€3,90</span>
-        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://payhip.com/b/1MRmS','_blank')">Acheter →</button></div></div></div></div>
+        <button class="btn-buy" style="margin-top:8px;padding:5px 12px;font-size:11px;border-radius:20px;" onclick="window.open('https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a','_blank')">Acheter →</button></div></div></div></div>
   </div>
 </section>
 
@@ -341,7 +373,7 @@ Email: ' + (email || 'non fornita'));
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Ce guide remplace-t-il le médecin ? <span class="ico">+</span></div><div class="faq-a">Non. Le guide est un outil de soutien et d'auto-soin, pas un traitement médical. Nous vous encourageons toujours à consulter un professionnel spécialisé.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Mes données sont-elles en sécurité ? <span class="ico">+</span></div><div class="faq-a">Absolument. Nous ne collectons aucune donnée médicale ou sensible. L'inscription ne demande que nom, email et langue préférée. Les paiements sont gérés par Stripe et PayPal.</div></div>
     <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Comment reçois-je le guide après l'achat ? <span class="ico">+</span></div><div class="faq-a">Immédiatement après le paiement, vous recevez par email un lien de téléchargement direct. Le guide est en format HTML, lisible sur tout appareil.</div></div>
-    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Puis-je acheter les guides pour une association ? <span class="ico">+</span></div><div class="faq-a">Oui. Pour des achats multiples ou des partenariats avec des centres de soutien, écrivez-nous à <a href="/cdn-cgi/l/email-protection#aecdc1c0dacfcddaeec8c2c1dccbc2c2cbdd80cdc1c3"><span class="__cf_email__" data-cfemail="25464a4b514446516543494a5740494940560b464a48">[email&#160;protected]</span></a>. Nous offrons des tarifs spéciaux pour les ONG.</div></div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')"><div class="faq-q">Puis-je acheter les guides pour une association ? <span class="ico">+</span></div><div class="faq-a">Oui. Pour des achats multiples ou des partenariats avec des centres de soutien, écrivez-nous à <a href="mailto:contact@florelles.com">contact&#64;florelles.com</a>. Nous offrons des tarifs spéciaux pour les ONG.</div></div>
   </div>
 </section>
 
@@ -364,7 +396,7 @@ Email: ' + (email || 'non fornita'));
 <footer>
   <div class="footer-logo">Renaissance</div>
   <div class="footer-links"><a href="#guide">Guides</a><a href="#mini">Mini-Guides</a><a href="#about">Le Projet</a><a href="privacy.html">Confidentialité</a><a href="contact.html">Contact</a></div>
-  <div class="footer-note">© 2026 Renaissance · Tous droits réservés · <a href=mailto:contact@florelles.com">contact&#64;florelles.com</a></div>
+  <div class="footer-note">© 2026 Renaissance · Tous droits réservés · <a href="mailto:contact@florelles.com">contact&#64;florelles.com</a></div>
 </footer>
 
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
@@ -380,32 +412,32 @@ Email: ' + (email || 'non fornita'));
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const miniLinks = {
-   'Respiro & Pavimento Pelvico': 'https://payhip.com/b/lOhxu',
-  'Tocco Consapevole & Mappatura': 'https://payhip.com/b/FT41f',
-  'Desensibilizzazione al Dolore': 'https://payhip.com/b/qp5XT',
-  'Kegel Modificati & Rilascio Attivo': 'https://payhip.com/b/ezawr',
-  'Riconnessione al Piacere': 'https://payhip.com/b/pCGTY',
-  'Comunicazione con il Partner': 'https://payhip.com/b/1MRmS',
-  'Bundle Mini-Guide Completo': 'https://payhip.com/b/sM9ab',
-  'Respiration & Plancher Pelvien': 'https://payhip.com/b/lOhxu',
-  'Toucher Conscient & Cartographie': 'https://payhip.com/b/FT41f',
-  'Désensibilisation à la Douleur': 'https://payhip.com/b/qp5XT',
-  'Kegel Modifiés & Relâchement Actif': 'https://payhip.com/b/ezawr',
-  'Reconnexion au Plaisir': 'https://payhip.com/b/pCGTY',
-  'Communication avec le Partenaire': 'https://payhip.com/b/1MRmS',
-  'Breathing & Pelvic Floor': 'https://payhip.com/b/lOhxu',
-  'Conscious Touch & Mapping': 'https://payhip.com/b/FT41f',
-  'Pain Desensitisation': 'https://payhip.com/b/qp5XT',
-  'Modified Kegel & Active Release': 'hhttps://payhip.com/b/ezawr',
-  'Reconnecting with Pleasure': 'https://payhip.com/b/pCGTY',
-  'Partner Communication': 'https://payhip.com/b/1MRmS',
+  'Respiro & Pavimento Pelvico': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Tocco Consapevole & Mappatura': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Desensibilizzazione al Dolore': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modificati & Rilascio Attivo': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Riconnessione al Piacere': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Comunicazione con il Partner': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Bundle Mini-Guide Completo': 'https://buy.stripe.com/fZu00j4Sr5dZ76c5Y72go0b',
+  'Respiration & Plancher Pelvien': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Toucher Conscient & Cartographie': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Désensibilisation à la Douleur': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Kegel Modifiés & Relâchement Actif': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnexion au Plaisir': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Communication avec le Partenaire': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
+  'Breathing & Pelvic Floor': 'https://buy.stripe.com/8x27sL1GfbCn76ceuD2go05',
+  'Conscious Touch & Mapping': 'https://buy.stripe.com/fZu28rgB99uf4Y42LV2go06',
+  'Pain Desensitisation': 'https://buy.stripe.com/7sY9AT98HfSD76cfyH2go07',
+  'Modified Kegel & Active Release': 'https://buy.stripe.com/9B6fZhfx59uf8ag72b2go08',
+  'Reconnecting with Pleasure': 'https://buy.stripe.com/14AeVdgB98qb2PW5Y72go09',
+  'Partner Communication': 'https://buy.stripe.com/eVqeVdfx5ayj3U04U32go0a',
 };
 const stripeLinks = {
-'Rinascita del Piacere': 'https://payhip.com/b/g4O9c',
-  'Renaissance du Plaisir': 'https://payhip.com/b/6gnSY',
-  'Renaissance of Pleasure': 'https://payhip.com/b/cE0D1',
+  'Rinascita del Piacere': 'https://buy.stripe.com/fZu28racL6i33U0fyH2go02',
+  'Renaissance du Plaisir': 'https://buy.stripe.com/7sY6oH98H49Vbms4U32go01',
+  'Renaissance of Pleasure': 'https://buy.stripe.com/6oU28ret19uf2PWcmv2go03',
   'Bundle 3 Langues': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04',
   'Bundle 3 Languages': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04',
   'Bundle 3 Lingue': 'https://buy.stripe.com/4gM9ATet1cGr1LS9aj2go04'
@@ -416,6 +448,3 @@ function closeModal(){document.getElementById('modal').classList.remove('open');
 function openMini(title) {
   const url = miniLinks[title];
   if (url) { window.open(url, '_blank')
-         </script>
-</body>
-</html>   
