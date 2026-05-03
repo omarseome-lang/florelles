@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you — florelles.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Jost',sans-serif;background:#1E1614;color:#FAF6F1;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;}
+
+/* Language switcher */
+.lang-bar{position:fixed;top:20px;right:24px;display:flex;gap:8px;z-index:100;}
+.lang-btn{background:rgba(250,246,241,0.06);border:1px solid rgba(184,112,102,0.25);color:#D4998F;font-family:'Jost',sans-serif;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border-radius:50px;cursor:pointer;transition:all .3s;}
+.lang-btn:hover,.lang-btn.active{background:#B87066;border-color:#B87066;color:#fff;}
+
+.wrap{max-width:600px;width:90%;text-align:center;padding:60px 40px;background:rgba(250,246,241,0.04);border:1px solid rgba(184,112,102,0.2);border-radius:24px;animation:fadeUp .8s ease both;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+.check{font-size:64px;margin-bottom:24px;animation:pop .6s .3s ease both;}
+@keyframes pop{from{transform:scale(0.6);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+.brand{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#D4998F;margin-bottom:32px;letter-spacing:1px;}
+h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:#FAF6F1;margin-bottom:12px;line-height:1.3;}
+h1 em{font-style:italic;color:#D4998F;}
+.sub{font-size:15px;color:rgba(250,246,241,0.65);margin-bottom:36px;line-height:1.7;}
+
+.btn-download{display:inline-block;background:#B87066;color:white;text-decoration:none;padding:16px 40px;border-radius:50px;font-size:15px;font-weight:500;letter-spacing:1px;margin-bottom:16px;transition:background .3s;}
+.btn-download:hover{background:#D4998F;}
+
+.note{font-size:12px;color:#8C7068;margin-bottom:32px;line-height:1.6;}
+.note a{color:#8C7068;text-decoration:underline;}
+.note a:hover{color:#D4998F;}
+
+.divider{border:none;border-top:1px solid rgba(184,112,102,0.15);margin:32px 0;}
+.back{font-size:13px;color:#8C7068;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .3s;}
+.back:hover{color:#D4998F;}
+
+/* Hidden content blocks */
+[data-lang]{display:none;}
+[data-lang].visible{display:block;}
+</style>
+</head>
+<body>
+
+<div class="lang-bar">
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('it')">IT</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+</div>
+
+<div class="wrap">
+  <div class="check">✅</div>
+  <div class="brand">Renaissance · florelles.com</div>
+
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <h1>Thank you for your <em>purchase</em></h1>
+    <p class="sub">Your payment has been confirmed.<br>You will receive an email shortly with your download link.</p>
+    <p class="note">Can't find the email? Check your spam folder.<br>
+      Support: <a href="mailto:contact@florelles.com">contact@florelles.com</a></p>
+  </div>
+
+  <!-- ITALIANO -->
+  <div data-lang="it">
+    <h1>Grazie per il tuo <em>acquisto</em></h1>
+    <p class="sub">Il tuo pagamento è stato confermato.<br>Riceverai a breve una mail con il link per il download.</p>
+    <p class="note">Non trovi la mail? Controlla la cartella spam.<br>
+      Assistenza: <a href="mailto:contact@florelles.com">contact@florelles.com</a></p>
+  </div>
+
+  <!-- FRANÇAIS -->
+  <div data-lang="fr">
+    <h1>Merci pour votre <em>achat</em></h1>
+    <p class="sub">Votre paiement a été confirmé.<br>Vous recevrez bientôt un e-mail avec votre lien de téléchargement.</p>
+    <p class="note">Vous ne trouvez pas l'e-mail ? Vérifiez vos spams.<br>
+      Support : <a href="mailto:contact@florelles.com">contact@florelles.com</a></p>
+  </div>
+
+  <hr class="divider">
+  <a href="https://florelles.com" class="back">← florelles.com</a>
+</div>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('visible'));
+  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelector('[data-lang="' + lang + '"]').classList.add('visible');
+  document.querySelector('.lang-btn[onclick*="' + lang + '"]').classList.add('active');
+  document.documentElement.lang = lang;
+}
+
+// Auto-detect browser language
+(function(){
+  const lang = navigator.language || navigator.userLanguage || 'en';
+  if(lang.startsWith('it')) setLang('it');
+  else if(lang.startsWith('fr')) setLang('fr');
+  else setLang('en');
+})();
+</script>
+</body>
+</html>
