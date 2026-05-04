@@ -166,7 +166,14 @@ footer{background:#140F0D;border-top:1px solid rgba(184,112,102,0.1);padding:60p
 </style>
 </head>
 <body style="background:#1E1614;color:#FAF6F1;">
-<nav>
+  <script>
+  const lang = navigator.language || navigator.userLanguage || 'it';
+  if (lang.startsWith('fr') && !window.location.href.includes('index_fr')) {
+    window.location.replace('index_fr.html');
+  } else if (lang.startsWith('en') && !window.location.href.includes('index_en')) {
+    window.location.replace('index_en.html');
+  }
+</script><nav>
   <a href="index.html" class="nav-logo">Rinascita</a>
   <div class="nav-links">
     <a href="#guide">Guide</a>
