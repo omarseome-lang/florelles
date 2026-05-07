@@ -418,6 +418,22 @@ for (var i = 0; i < faqItems.length; i++) {
     this.querySelector('span').textContent = answer.style.display === 'block' ? '-' : '+';
   });
 }
+  // Auto-detect browser language on load
+(function() {
+  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  var detected;
+  if (lang.startsWith('it')) {
+    detected = 'it';
+  } else if (lang.startsWith('fr')) {
+    detected = 'fr';
+  } else {
+    detected = 'en';
+  }
+  if (!document.getElementById('lang-' + detected).classList.contains('active')) {
+    var targetBtn = document.querySelector('.lang-tab[onclick*="showLang(\'' + detected + '\'"]');
+    if (targetBtn) showLang(detected, targetBtn);
+  }
+})();
 </script>
 </body>
 </html>
